@@ -24,6 +24,10 @@ if [ -f ~/.bashrc.original ]; then
   mv ~/.bashrc.original ~/.bashrc
 fi
 
+if [ -f ~/.profile.original ]; then
+  mv ~/.profile.original ~/.profile
+fi
+
 if [ -d ~/.bash_profile.d ]; then
   rm -rf ~/.bash_profile.d
 fi
