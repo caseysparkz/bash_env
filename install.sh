@@ -35,7 +35,7 @@ fi
 
 if [ -f ~/.profile ];then
   mv ~/.profile ~/.profile.original
-  ln -s ~/.bash_profile/profile ~/.profile
+  ln -s ~/.bash_profile.d/profile ~/.profile
 fi
 
 source ~/.profile
