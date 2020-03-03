@@ -28,7 +28,7 @@ alias cputemp="sensors | grep Core"
 alias facter="facter -y"
 
 ### Start webserver in directory
-alias www="python -m SimpleHTTPServer 8000"
+alias www="python -m http.server 8000"
 
 ### Speed test
 alias speed="speedtest-cli --server 2406 --simple"

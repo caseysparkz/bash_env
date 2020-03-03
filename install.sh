@@ -1,11 +1,10 @@
 ### Run as root
 #! /bin/bash
 
+### APT packages
 sudo sh -c "
   apt update;
   apt upgrade -y;
-  apt autoremove;
-  apt autoclean;
   apt install		\
     facter		\
     libnotify-bin	\
@@ -21,7 +20,9 @@ sudo sh -c "
     tldr		\
     lm-sensors -y"
 
-sudo pip3 install thefuck
+### Pip3 packages
+sudo pip3 install	\
+  thefuck
 
 if [ -d ~/bash_profile.d ]; then
   mv ~/bash_profile.d ~/.bash_profile.d
