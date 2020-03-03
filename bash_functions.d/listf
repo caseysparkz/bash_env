@@ -5,13 +5,15 @@ listf() {
 
   (head -n 1 ~/.bash_profile.d/bash_functions.d/* |
     tr -d '\n\n' |
-    sed -e 's/\/home\/*\/\.bash_profile.d\/bash_functions\.d\///g' \
-      -e 's/### //g' \
-      -e 's/ <==/=/g' \
+    sed -e 's/\/home\/*\/\.bash_profile.d\/bash_functions\.d\///g'	\
+      -e 's/### //g'							\
+      -e 's/ <==/=/g'							\
       -e 's/==> /\n/g';
+
     printf '\n') |
-    column -t -s =|
-    sed '/README/d';
+      column -t -s =|
+      sed -e '/README/d'						\
+        -e 's/.*\///g';
 
   printf '\n';
 
