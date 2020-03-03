@@ -30,12 +30,12 @@ fi
 
 if [ -f ~/.bashrc ];then
   mv ~/.bashrc ~/.bashrc.original
+  ln -s ~/.bash_profile.d/bashrc ~/.bashrc
 fi
 
 if [ -f ~/.profile ];then
   mv ~/.profile ~/.profile.original
+  ln -s ~/.bash_profile/profile ~/.profile
 fi
-
-ln -s ~/.bash_profile.d/bashrc ~/.bashrc
 
 source ~/.profile

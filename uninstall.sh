@@ -18,22 +18,16 @@
 
 if [ $(head -n 1 ~/.bashrc)="###transnat" ]; then
   rm ~/.bashrc
-fi
-
-if [ -f ~/.bashrc.original ]; then
   mv ~/.bashrc.original ~/.bashrc
 fi
 
-if [ -f ~/.profile.original ]; then
+if [ $(head -n 1 ~/.profile)="###transnat" ]; then
+  rm ~/.profile
   mv ~/.profile.original ~/.profile
 fi
 
 if [ -d ~/.bash_profile.d ]; then
   rm -rf ~/.bash_profile.d
-fi
-
-if [ -d ~/bash_profile.d ]; then
-  rm -rf ~/bash_profile.d
 fi
 
 source ~/.profile
