@@ -19,6 +19,10 @@ sudo sh -c "
     tldr		\
     lm-sensors -y"
 
+if [ -d ~/bash_profile.d ]; then
+  mv ~/bash_profile.d ~/.bash_profile.d
+fi
+
 ln -s ~/.bash_profile.d/bashrc ~/.bashrc
 
 source ~/.bash_profile.d/bashrc
