@@ -3,7 +3,7 @@ lista() {
 
   printf 'Aliases:\n-----\n';
 
-  cat /home/caseyadmin/.bash_profile.d/bash_aliases |
+  cat ~/.bash_profile.d/bash_aliases |
     sed -e '/###/d' \
       -e 's/alias //g' \
       -e 's/\"//g' |
