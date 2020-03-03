@@ -48,3 +48,5 @@ alias mysql="mysql -u caseyadmin -p"
 alias mysql-pt="mysql -D primetrust -u caseyadmin -p"
 alias mysql-banq="mysql -D banq -u caseyadmin -p"
 
+### Misc.
+alias c="clear"

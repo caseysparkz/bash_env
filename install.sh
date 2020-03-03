@@ -11,6 +11,8 @@ sudo sh -c "
     libnotify-bin	\
     ntp			\
     python3		\
+    python3-dev		\
+    python3-pip		\
     safe-rm		\
     sl			\
     snapd		\
@@ -18,6 +20,8 @@ sudo sh -c "
     thefuck		\
     tldr		\
     lm-sensors -y"
+
+sudo pip3 install thefuck
 
 if [ -d ~/bash_profile.d ]; then
   mv ~/bash_profile.d ~/.bash_profile.d
