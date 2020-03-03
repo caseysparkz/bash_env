@@ -33,4 +33,4 @@ fi
 
 ln -s ~/.bash_profile.d/bashrc ~/.bashrc
 
-source ~/.bash_profile.d/bashrc
+source ~/.bashrc

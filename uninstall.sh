@@ -16,7 +16,7 @@
 #  apt --purge autoremove -y;
 #  apt autoclean"
 
-if [ -f ~/.bashrc ]; then
+if [ $(head -n 1 ~/.bashrc)="###transnat" ]; then
   rm ~/.bashrc
 fi
 
