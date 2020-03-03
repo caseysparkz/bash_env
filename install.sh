@@ -19,4 +19,6 @@ sudo sh -c "
     tldr		\
     lm-sensors -y"
 
+ln -s ~/.bash_profile.d/bashrc ~/.bashrc
+
 source ~/.bash_profile.d/bashrc

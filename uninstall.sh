@@ -16,4 +16,4 @@ sudo sh -c "
   apt --purge autoremove -y;
   apt autoclean"
 
-
+rm ~/.bashrc
