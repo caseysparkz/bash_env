@@ -36,4 +36,4 @@ if [ -d ~/bash_profile.d ]; then
   rm -rf ~/bash_profile.d
 fi
 
-
+source ~/.profile
