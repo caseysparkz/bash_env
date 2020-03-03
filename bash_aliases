@@ -15,9 +15,6 @@ alias chx="chmod 755"
 alias rm="safe-rm"
 alias rmf="rm -rf"
 
-### Go back one directory
-alias back="cd .."
-
 ### Search history by regex
 alias hgrep="history|grep -E"
 
@@ -36,9 +33,6 @@ alias speed="speedtest-cli --server 2406 --simple"
 ### Get external IP
 alias ipe="curl ipinfo.io/ip"
 
-### Clear
-alias c="clear"
-
 ### Python environment
 alias ve="python -m venv ./venv"
 alias va="source ./venv/bin/activate"
@@ -49,4 +43,5 @@ alias mysql-pt="mysql -D primetrust -u caseyadmin -p"
 alias mysql-banq="mysql -D banq -u caseyadmin -p"
 
 ### Misc.
+alias back="cd .."
 alias c="clear"
