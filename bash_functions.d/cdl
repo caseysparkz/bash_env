@@ -1,0 +1,7 @@
+### Change directory and list contents
+cdl() {
+
+  cd $1;
+  ls -l
+
+}

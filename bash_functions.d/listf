@@ -1,0 +1,18 @@
+### List all functions
+listf() {
+
+  printf 'Functions:\n-----\n';
+
+  (head -n 1 /home/caseyadmin/.bash_profile.d/bash_functions.d/* |
+    tr -d '\n\n' |
+    sed -e 's/\/home\/caseyadmin\/\.bash_profile.d\/bash_functions\.d\///g' \
+      -e 's/### //g' \
+      -e 's/ <==/=/g' \
+      -e 's/==> /\n/g';
+    printf '\n') |
+    column -t -s =|
+    sed '/README/d';
+
+  printf '\n';
+
+}

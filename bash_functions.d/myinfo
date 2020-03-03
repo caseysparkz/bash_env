@@ -1,0 +1,25 @@
+### Show system information ###
+myinfo () {
+
+  printf "CPU: "
+  cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
+  printf "\n"
+
+  printf "OS: " && cat /etc/issue | awk '{ printf "%s %s %s" , $1, $2 , $3 }'
+  printf "\n"
+
+  printf "Kernel: "
+  uname -a | awk '{ printf "%s " , $3 }'
+  uname -m
+
+  uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5 }' | sed 's/,//g'
+  printf "\n"
+
+## Need to write to only execute when `cputemp` is present
+#  if cputemp | grep "not found" > /dev/null; then
+#    cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
+#    cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
+#    cputemp | awk '{ printf "%s %s", $1 $2 }'
+#  fi
+
+}

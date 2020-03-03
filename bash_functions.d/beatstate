@@ -1,0 +1,11 @@
+### Report the state of Beats
+beatstate() {
+
+  for LINE in $(ls /etc | grep beat)
+  do
+    printf $LINE && systemctl status $line 2> /dev/null |
+    grep Active |
+    sed -r -e 's/   Active\://g' -e 's/\(running\) //g';
+  done
+
+}

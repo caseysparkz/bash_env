@@ -1,0 +1,7 @@
+### Make directory and enter
+mkcd() {
+
+  mkdir -p $1;
+  cd $1;
+
+}
