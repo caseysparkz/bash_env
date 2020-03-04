@@ -32,13 +32,13 @@ if [ -d ~/bash_profile.d ]; then
 fi
 
 ### Save existing profile.
-if [ -f ~/.profile ];then
+if [ ! -f ~/.profile.original ];then
   mv ~/.profile ~/.profile.original
   ln -s ~/.bash_profile.d/profile ~/.profile
 fi
 
 ### Save existing bashrc.
-if [ -f ~/.bashrc ];then
+if [ ! -f ~/.bashrc.original ];then
   mv ~/.bashrc ~/.bashrc.original
   ln -s ~/.bash_profile.d/bashrc ~/.bashrc
 fi
