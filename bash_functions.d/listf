@@ -1,20 +1,14 @@
-### List all functions
+### listf: List all functions
 listf() {
 
   printf 'Functions:\n-----\n';
 
-  (head -n 1 ~/.bash_profile.d/bash_functions.d/* |
-    tr -d '\n\n' |
-    sed -e 's/\/home\/*\/\.bash_profile.d\/bash_functions\.d\///g'	\
-      -e 's/### //g'							\
-      -e 's/ <==/=/g'							\
-      -e 's/==> /\n/g';
+  ( grep '###' ~/.bash_profile.d/bash_functions.d/* |
+  sed -e 's/.*###\ //g'					\
+    -e '/bash_profile.d/d';
 
-    printf '\n') |
-      column -t -s =|
-      sed -e '/README/d'						\
-        -e 's/.*\///g';
+  printf '\n') |
 
-  printf '\n';
+  column -t -s: 
 
 }

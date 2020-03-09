@@ -1,4 +1,4 @@
-### Simple CLI Clock
+### clock: Simple CLI Clock
 clock() {
 
   while true; do

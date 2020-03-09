@@ -1,4 +1,4 @@
-### Extract any compressed file or compress any uncompressed file
+### ext: Extract any compressed file or compress any uncompressed file
 ext() {
 
   if [ -f $1 ] ; then

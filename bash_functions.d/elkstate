@@ -1,4 +1,4 @@
-### Report the state of ELK stack and Beats
+### elkstate: Report the state of ELK stack and Beats
 elkstate() {
 
   for ITEM in elasticsearch logstash kibana

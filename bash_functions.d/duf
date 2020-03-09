@@ -1,4 +1,4 @@
-### Disk usage (formatted)
+### duf: Disk usage (formatted)
 duf() {
 
   du -sk "$@" |

@@ -1,4 +1,4 @@
-### Count files in directory
+### numfiles: Count files in directory
 numfiles() { 
 
     N="$(ls $1 | wc -l)"; 

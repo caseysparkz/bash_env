@@ -1,4 +1,4 @@
-### Network information
+### netinfo: Network information
 netinfo() {
 
   printf "Network Information\n";

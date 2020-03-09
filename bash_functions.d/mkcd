@@ -1,4 +1,4 @@
-### Make directory and enter
+### mkcd: Make directory and enter
 mkcd() {
 
   mkdir -p $1;

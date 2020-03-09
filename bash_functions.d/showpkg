@@ -1,4 +1,4 @@
-### Show packages
+### showpkg: Show packages
 showpkg() {
 
   apt-cache pkgnames | grep -i "$1" | sort

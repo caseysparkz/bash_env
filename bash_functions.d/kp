@@ -1,4 +1,4 @@
-### Kill process by name
+### kp: Kill process by name
 kp() {
 
   ps aux | grep $1 > /dev/null

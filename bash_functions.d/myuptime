@@ -1,4 +1,4 @@
-### Show system uptime
+### myuptime: Show system uptime
 myuptime() {
 
   uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'

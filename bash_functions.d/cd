@@ -1,0 +1,25 @@
+### ccdll: Change directory, clear, and show contents as list.
+### cdl: Change directory and list contents
+### cdll: Change directory and show contents as list
+
+ccdll() {
+
+  cd $1;
+  clear;
+  ls -la
+
+}
+
+cdl() {
+
+  cd $1;
+  ls -la
+
+}
+
+cdll() {
+
+  cd $1;
+  ls -la
+
+}

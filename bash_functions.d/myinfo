@@ -1,5 +1,5 @@
-### Show system information ###
-myinfo () {
+### myinfo: Show system information ###
+myinfo() {
 
   printf "CPU: "
   cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'

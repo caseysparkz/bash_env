@@ -1,4 +1,4 @@
-### Finds and lists directory sizes in $PWD
+### dirsize: Finds and lists directory sizes in $PWD
 dirsize() {
 
   du -shx * .[a-zA-Z0-9_]* 2> /dev/null |

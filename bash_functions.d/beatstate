@@ -1,4 +1,4 @@
-### Report the state of Beats
+### beatstate: Report the state of Beats
 beatstate() {
 
   for LINE in $(ls /etc | grep beat)
