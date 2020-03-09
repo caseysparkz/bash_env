@@ -8,6 +8,7 @@ sudo sh -c "
   apt install		\
     facter		\
     libnotify-bin	\
+    nmap		\
     ntp			\
     python3		\
     python3-dev		\
