@@ -2,7 +2,14 @@
 ### cdl: Change directory and list contents
 ### cdll: Change directory and show contents as list
 
-ccdll() {
+cdc() {
+
+  cd $1;
+  clear
+
+}
+
+cdcl() {
 
   cd $1;
   clear;
@@ -11,13 +18,6 @@ ccdll() {
 }
 
 cdl() {
-
-  cd $1;
-  ls -la
-
-}
-
-cdll() {
 
   cd $1;
   ls -la
