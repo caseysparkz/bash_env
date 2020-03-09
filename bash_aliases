@@ -40,6 +40,7 @@ alias src="source ~/.profile"
 alias speed="speedtest-cli --server 2406 --simple"
 
 ### SSH
+alias egnyte="ssh caseyadmin@egnyte"
 alias elk="ssh caseyadmin@elk"
 alias pbx="ssh caseyadmin@pbx"
 alias wbp="ssh caseyadmin@wallboardpi"
