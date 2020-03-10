@@ -3,9 +3,11 @@ beatstate() {
 
   for LINE in $(ls /etc | grep beat)
   do
-    printf $LINE && systemctl status $line 2> /dev/null |
+
+    printf $LINE' ' && systemctl status $LINE 2> /dev/null |
     grep Active |
-    sed -r -e 's/   Active\://g' -e 's/\(running\) //g';
+    sed -e 's/:.*//g'
+
   done
 
 }
