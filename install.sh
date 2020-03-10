@@ -1,27 +1,58 @@
 ### Run as root
 #! /bin/bash
 
-### Install APT packages
-sudo sh -c "
-  apt update;
-  apt upgrade -y;
-  apt install		\
-    facter		\
-    libnotify-bin	\
-    nmap		\
-    ntp			\
-    python3		\
-    python3-dev		\
-    python3-pip		\
-    python3-venv	\
-    safe-rm		\
-    sl			\
-    snapd		\
-    speedtest-cli	\
-    thefuck		\
-    tldr		\
-    lm-sensors -y
-"
+if [ -f "/etc/os-release" ] || [ -f "/etc/debian_version" ]; then
+  distroname="Debian"
+elif [ -f "/etc/redhat-release" ]; then
+  distroname="RHEL"
+fi
+
+if [ "$distroname" = "Debian" ]; then
+  ### Install apt packages
+  sudo sh -c "
+    apt update;
+    apt upgrade -y;
+    apt install		\
+      facter		\
+      libnotify-bin	\
+      nmap		\
+      ntp		\
+      python3		\
+      python3-dev	\
+      python3-pip	\
+      python3-venv	\
+      safe-rm		\
+      sl		\
+      snapd		\
+      speedtest-cli	\
+      thefuck		\
+      tldr		\
+      lm-sensors -y
+  "
+fi
+
+if [ "$distroname" = "RHEL" ]; then
+  ### Install yum packages
+  sudo sh -c "
+    yum  update;
+    yum upgrade -y;
+    yum install		\
+      epel-release	\
+      facter		\
+      libnotify-bin	\
+      nmap		\
+      ntp		\
+      python3		\
+      python3-dev	\
+      python3-pip	\
+      python3-venv	\
+      safe-rm		\
+      speedtest-cli	\
+      thefuck		\
+      tldr		\
+      lm-sensors -y
+  "
+fi
 
 ### Install Pip3 packages
 pip3 install		\
@@ -45,4 +76,8 @@ if [ ! -f ~/.bashrc.original ];then
 fi
 
 ### Load new profile
-source ~/.profile
+if [ -f ~/.profile ]; then
+  source ~/.profile
+elif [ -f ~/.bashrc ]
+  source ~/.bashrc
+fi
