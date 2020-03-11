@@ -60,6 +60,7 @@ pip3 install		\
 
 ### Hide bash_profile.d.
 if [ -d ~/bash_profile.d ]; then
+  sudo chown -R $(whoami) ~/bash_profile.d;
   mv ~/bash_profile.d ~/.bash_profile.d
 fi
 
