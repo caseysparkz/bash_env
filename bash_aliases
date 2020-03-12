@@ -40,11 +40,11 @@ alias src="source ~/.profile"
 alias speed="speedtest-cli --server 2406 --simple"
 
 ### SSH
-alias egnyte="ssh caseyadmin@egnyte"
-alias elk="ssh caseyadmin@elk"
-alias pbx="ssh caseyadmin@pbx"
-alias wbp="ssh caseyadmin@wallboardpi"
-alias wiki="ssh caseyadmin@wiki"
+alias egnyte="ssh caseyadmin@egnyte.primetrust.local"
+alias elk="ssh caseyadmin@elk.primetrust.local"
+alias pbx="ssh caseyadmin@pbx.primetrust.local"
+alias wbp="ssh caseyadmin@wallboardpi.primetrust.local"
+alias wiki="ssh caseyadmin@wiki.primetrust.local"
 
 ### Sudo
 alias sudo="sudo -E"
