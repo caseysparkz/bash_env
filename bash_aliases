@@ -1,6 +1,6 @@
 ### Clear
 alias c="clear"
-alias cll="c;ll"
+alias cl="c;ll"
 
 ### chmod
 alias chr="chmod 644"
