@@ -3,7 +3,7 @@
 sudo sh -c "
   yum update;
   yum upgrade -y;
-  yum install		\
+  yum install -y	\
     facter		\
     libnotify-bin	\
     nmap		\
@@ -18,5 +18,5 @@ sudo sh -c "
     speedtest-cli	\
     thefuck		\
     tldr		\
-    lm-sensors -y
+    lm-sensors
 "

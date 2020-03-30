@@ -27,7 +27,7 @@ alias ve="python -m venv ./venv"
 alias www="python -m http.server 8000"
 
 ### rm
-alias rm="safe-rm"
+#alias rm="safe-rm"
 alias rmf="rm -rf"
 
 ### Sensors
