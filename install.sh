@@ -17,13 +17,13 @@ elif [ -f "/etc/arch-release" ]; then
 fi
 
 ### Save existing profile.
-if [ ! -f ~/.profile.original ];then
+if [ ! -f ~/.profile.original ]; then
 	mv ~/.profile ~/.profile.original
 	ln -s ~/.bash_profile.d/profile ~/.profile
 fi
 
 ### Save existing bashrc.
-if [ ! -f ~/.bashrc.original ];then
+if [ ! -f ~/.bashrc.original ]; then
 	mv ~/.bashrc ~/.bashrc.original
 	ln -s ~/.bash_profile.d/bashrc ~/.bashrc
 fi
@@ -31,6 +31,6 @@ fi
 ### Load new profile
 if [ -f ~/.profile ]; then
 	source ~/.profile
-elif [ -f ~/.bashrc ]
+elif [ -f ~/.bashrc ]; then
 	source ~/.bashrc
 fi
