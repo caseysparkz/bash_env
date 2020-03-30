@@ -8,7 +8,7 @@ if [ -d ~/bash_profile.d ]; then
 fi
 
 ### Install packages based on Linux distro.
-if [ -f "/etc/os-release" ] || [ -f "/etc/debian_version" ]; then
+if [ -f "/etc/debian_version" ]; then
 	~/.bash_profile.d/distro_packages/debian.sh
 elif [ -f "/etc/redhat-release" ]; then
  	~/.bash_profile.d/distro_packages/rhel.sh
