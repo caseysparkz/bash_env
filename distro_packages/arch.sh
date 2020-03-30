@@ -3,7 +3,7 @@
 sudo sh -c "
   pacman -Syu;
   pacman -S
-    facter,		\
+#    facter,		\
     libnotify-bin,	\
     nmap,		\
     ntp,		\
