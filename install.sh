@@ -29,8 +29,5 @@ if [ ! -f ~/.bashrc.original ]; then
 fi
 
 ### Load new profile
-if [ -f ~/.profile ]; then
-	source ~/.profile
-elif [ -f ~/.bashrc ]; then
-	source ~/.bashrc
-fi
+source ~/.profile
+source ~/.bashrc
