@@ -1,4 +1,4 @@
-#! /bin/bash
+# /bin/bash
 
 ### Change ownership to user and hide bash_profile.d.
 if [ -d ~/bash_env ]; then
@@ -26,6 +26,12 @@ if [ -f ~/.bashrc] && [ ! -L ~/.bashrc ]; then
 	mv ~/.bashrc ~/.bashrc.original
 fi
 ln -s ~/.bash/bashrc ~/.bashrc
+
+### Save existing screenrc and symlink to new bashrc.
+if [ -f ~/.screenrc ]; then
+	mv ~/.screenrc ~/.screenrc.original
+fi
+ln -s ~/.bash/screenrc ~/.screenrc
 
 ### Load new profile
 source ~/.profile
