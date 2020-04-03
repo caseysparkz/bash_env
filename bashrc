@@ -105,13 +105,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash/bash_aliases ]; then
-    . ~/.bash/bash_aliases
+if [ -f ~/.bash/aliases ]; then
+    . ~/.bash/aliases
 fi
 
 # Function definitions
 # Add all new functions as a new file in ~/.bash_functions.d/
-for f in ~/.bash/bash_functions.d/*;
+for f in ~/.bash/functions.d/*;
 do
   source $f;
 done
