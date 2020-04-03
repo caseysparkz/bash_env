@@ -1,4 +1,3 @@
-### Run as root
 #! /bin/bash
 
 ### Change ownership to user and hide bash_profile.d.
@@ -8,26 +7,25 @@ if [ -d ~/bash_env ]; then
 fi
 
 ### Install packages based on Linux distro.
-if [ -f "/etc/debian_version" ]; then
+if [ -f /etc/debian_version ]; then
 	~/.bash/distro_packages/debian.sh
-elif [ -f "/etc/redhat-release" ]; then
+elif [ -f /etc/redhat-release ]; then
  	~/.bash/distro_packages/rhel.sh
-elif [ -f "/etc/arch-release" ]; then
+elif [ -f /etc/arch-release ]; then
 	~/.bash/distro_packages/arch.sh
 fi
 
-### Save existing profile.
-if [ ! -f ~/.profile.original ]; then
+### Save existing profile and symlink new profile.
+if [ -f ~/.profile ] && [ ! -L ~/.profile ]; then
 	mv ~/.profile ~/.profile.original
-	ln -s ~/.bash/profile ~/.profile
 fi
+ln -s ~/.bash/profile ~/.profile
 
-### Save existing bashrc.
-if [ ! -f ~/.bashrc.original ]; then
+### Save existing bashrc and symlink new bashrc.
+if [ -f ~/.bashrc] && [ ! -L ~/.bashrc ]; then
 	mv ~/.bashrc ~/.bashrc.original
-	ln -s ~/.bash/bashrc ~/.bashrc
 fi
+ln -s ~/.bash/bashrc ~/.bashrc
 
 ### Load new profile
 source ~/.profile
-source ~/.bashrc
