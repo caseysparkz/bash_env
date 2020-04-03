@@ -1,4 +1,3 @@
-### Run as root
 #! /bin/bash
 sudo sh -c "
 	yum update;

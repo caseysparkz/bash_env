@@ -1,4 +1,3 @@
-### Run as root
 #! /bin/bash
 sudo sh -c "
 	apt update;

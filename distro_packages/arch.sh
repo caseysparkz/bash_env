@@ -1,11 +1,10 @@
-### Run as root
 #! /bin/bash
 sudo sh -c "
 	pacman -Syu;
 	pacman -S
 		facter		\
 		libnotify-bin	\
-		lm-sensors	\
+		lm_sensors	\
 		nmap		\
 		ntp		\
 		python		\

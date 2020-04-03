@@ -1,10 +1,8 @@
 # /bin/bash
 
 ### Change ownership to user and hide bash_profile.d.
-if [ -d ~/bash_env ]; then
-	sudo chown -R $(whoami) ~/bash_env
-	mv ~/bash_env ~/.bash
-fi
+sudo chown -R $(whoami) ~/bash_env
+mv ~/bash_env ~/.bash
 
 ### Install packages based on Linux distro.
 if [ -f /etc/debian_version ]; then
@@ -28,7 +26,7 @@ fi
 ln -s ~/.bash/bashrc ~/.bashrc
 
 ### Save existing screenrc and symlink to new bashrc.
-if [ -f ~/.screenrc ]; then
+if [ -f ~/.screenrc ] && [ ! -L ~/.screenrc ]; then
 	mv ~/.screenrc ~/.screenrc.original
 fi
 ln -s ~/.bash/screenrc ~/.screenrc
