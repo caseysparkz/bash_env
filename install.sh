@@ -1,7 +1,7 @@
 # /bin/bash
 
 ### Change ownership to user and hide bash_profile.d.
-sudo chown -R $(whoami) ~/bash_env
+chown -R $(whoami) ~/bash_env
 mv ~/bash_env ~/.bash
 
 ### Install packages based on Linux distro.
