@@ -1,0 +1,8 @@
+aur() {
+  cd ~
+  git clone "https://aur.archlinux.org/"$1".git"
+  cd $1
+  makepkg -si --noconfirm
+  cd ~
+  rm -rf $1
+}
