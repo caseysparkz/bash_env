@@ -6,6 +6,9 @@ alias cl="c;ll"
 alias chr="chmod 644"
 alias chx="chmod 755"
 
+### Exit and clear history
+alias exit="history -c;exit"
+
 ### Facter as YAML
 alias facter="facter -y"
 
@@ -43,6 +46,7 @@ alias speed="speedtest-cli --server 2406 --simple"
 alias egnyte="ssh caseyadmin@egnyte.primetrust.local"
 alias elk="ssh caseyadmin@elk.primetrust.local"
 alias pbx="ssh caseyadmin@pbx.primetrust.local"
+alias server19="ssh csparks@server19"
 alias wbp="ssh caseyadmin@wallboardpi.primetrust.local"
 alias wiki="ssh caseyadmin@wiki.primetrust.local"
 

@@ -4,13 +4,16 @@
 chown -R $(whoami) ~/bash_env
 mv ~/bash_env ~/.bash
 
-### Install packages based on Linux distro.
+### Install packages for installed distro or exit if distro not supported.
 if [ -f /etc/debian_version ]; then
 	~/.bash/distro_packages/debian.sh
 elif [ -f /etc/redhat-release ]; then
  	~/.bash/distro_packages/rhel.sh
 elif [ -f /etc/arch-release ]; then
 	~/.bash/distro_packages/arch.sh
+else
+	echo "Unknown distro";
+	exit
 fi
 
 ### Save existing profile and symlink new profile.
