@@ -1,0 +1,23 @@
+### ccdll: Change directory, clear, and show contents as list.
+### cdl: Change directory and list contents
+### cdll: Change directory and show contents as list
+
+update() {
+	if [ -f /etc/os-release ]; then
+		sudo sh -c "
+			apt update;
+			apt upgrade -y;
+			apt autoclean;
+			apt --purge autoremove -y"
+
+	elif [ -f /etc/arch-release ]; then
+		sudo pacman -Syu
+
+	elif [ -f /etc/rhel-release ]; then
+		sudo sh -c "
+			yum update;
+			sudo yum upgrade -y;
+			sudo yum autoclean;
+			sudo yum --purge autoremove -y"
+	fi
+}
