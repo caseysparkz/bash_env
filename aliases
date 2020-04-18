@@ -19,6 +19,9 @@ alias hgrep="history|grep -E"
 ### IP
 alias ipe="curl ipinfo.io/ip"
 
+### Metasploit
+alias msfconsole="msfconsole --quiet -x \"db_connect ${user}@msf\""
+
 ### MySQL
 alias mysql="mysql -u caseyadmin -p"
 alias mysql-pt="mysql -D primetrust -u caseyadmin -p"
