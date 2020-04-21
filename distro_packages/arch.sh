@@ -1,19 +1,19 @@
 #! /bin/bash
 sudo sh -c "
-	pacman -Syu         \
-		facter			      \
-		libnotify		      \
-		lm_sensors		    \
-		nmap			        \
-		ntp			          \
-		python			      \
-		python-pip		    \
-		python-virtualenv	\
-		sl			          \
-		snapd			        \
-		speedtest-cli		  \
-		thefuck			      \
-		tldr			        \
+	pacman -Syu \
+		facter \
+		libnotify \
+		lm_sensors \
+		nmap \
+		ntp \
+		python \
+		python-pip \
+		python-virtualenv \
+		sl \
+		snapd \
+		speedtest-cli \
+		thefuck	\
+		tldr \
 		vim --noconfirm
 "
 
