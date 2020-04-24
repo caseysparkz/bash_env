@@ -3,7 +3,7 @@ listf() {
 
   printf 'Functions:\n-----\n';
 
-  ( grep '###' ~/.bash_profile.d/bash_functions.d/* |
+  ( grep '###' ~/.bash/functions.d/* |
   sed -e 's/.*###\ //g'					\
     -e '/bash_profile.d/d';
 
