@@ -4,8 +4,12 @@ listf() {
   printf 'Functions:\n-----\n';
 
   ( grep '###' ~/.bash/functions.d/* |
-  sed -e 's/.*###\ //g'					\
-    -e '/bash_profile.d/d';
+
+  grep -v 'sed' |
+
+  grep -v 'grep'|
+
+  sed -e 's/.*###\ //g'	-e '/bash_profile.d/d';
 
   printf '\n') |
 
