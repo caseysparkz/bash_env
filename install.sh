@@ -36,3 +36,4 @@ ln -s ~/.bash/screenrc ~/.screenrc
 
 ### Load new profile
 source ~/.profile
+
