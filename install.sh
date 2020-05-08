@@ -32,7 +32,7 @@ ln -s ~/.bash/bashrc ~/.bashrc
 if [ -f ~/.screenrc ] && [ ! -L ~/.screenrc ]; then
 	mv ~/.screenrc ~/.screenrc.original
 fi
-ln -s ~/.bash/screenrc ~/.screenrc
+ln -s ~/.bash/screen.d/screenrc ~/.screenrc
 
 ### Load new profile
 source ~/.profile
