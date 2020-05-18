@@ -4,7 +4,6 @@ sudo sh -c "
 	apt upgrade -y;
 	apt install -y	\
 		facter \
-		libnotify-bin \
 		lm-sensors \
 		nmap \
 		ntp \

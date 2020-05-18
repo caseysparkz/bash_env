@@ -3,3 +3,8 @@ focus
 split -v
 focus
 focus
+split
+split -v
+focus
+focus
+focus
