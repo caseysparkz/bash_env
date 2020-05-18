@@ -4,7 +4,6 @@ sudo sh -c "
 	yum upgrade -y;
 	yum install -y \
 		facter \
-		libnotify-bin \
 		lm-sensors \
 		nmap \
 		ntp \

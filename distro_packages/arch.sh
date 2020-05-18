@@ -2,7 +2,6 @@
 sudo sh -c "
 	pacman -Syu \
 		facter \
-		libnotify \
 		lm_sensors \
 		nmap \
 		ntp \
