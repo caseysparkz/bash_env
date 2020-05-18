@@ -1,9 +1,4 @@
 split
-focus
-split -v
-focus
-focus
-split
 split -v
 focus
 focus
