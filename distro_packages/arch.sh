@@ -13,7 +13,8 @@ sudo sh -c "
 		speedtest-cli \
 		thefuck	\
 		tldr \
-		vim --noconfirm
+		vim
+    whois --noconfirm
 "
 
 if [ ! -L /snap ]; then

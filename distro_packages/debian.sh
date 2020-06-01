@@ -17,5 +17,6 @@ sudo sh -c "
 		speedtest-cli \
 		thefuck \
 		tldr \
-		vim
+		vim \
+    whois
 "
