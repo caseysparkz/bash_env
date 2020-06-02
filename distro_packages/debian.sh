@@ -4,7 +4,8 @@ sudo sh -c "
 	apt upgrade -y;
 	apt install -y	\
 		facter \
-		lm-sensors \
+		grok \
+    lm-sensors \
 		nmap \
 		ntp \
 		python3 \

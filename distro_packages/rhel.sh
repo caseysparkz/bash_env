@@ -4,7 +4,8 @@ sudo sh -c "
 	yum upgrade -y;
 	yum install -y \
 		facter \
-		lm-sensors \
+		grok \
+    lm-sensors \
 		nmap \
 		ntp \
 		python3 \

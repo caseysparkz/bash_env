@@ -2,7 +2,8 @@
 sudo sh -c "
 	pacman -Syu \
 		facter \
-		lm_sensors \
+		grok \
+    lm_sensors \
 		nmap \
 		ntp \
 		python \
