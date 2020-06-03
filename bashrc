@@ -131,3 +131,4 @@ export EDITOR=vim
 
 eval $(thefuck --alias)
 
+neofetch

@@ -6,7 +6,8 @@ sudo sh -c "
 		facter \
 		grok \
     lm-sensors \
-		nmap \
+		neofetch \
+    nmap \
 		ntp \
 		python3 \
 		python3-dev \
