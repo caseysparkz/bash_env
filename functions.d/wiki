@@ -1,0 +1,6 @@
+### wiki: Search single term in wikipedia via DNS request.
+wiki(){
+
+  dig +short txt ${1}.wp.dg.cx @8.8.8.8
+
+}
