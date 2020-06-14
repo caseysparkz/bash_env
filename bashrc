@@ -130,3 +130,4 @@ fi
 export EDITOR=vim
 
 eval $(thefuck --alias)
+
