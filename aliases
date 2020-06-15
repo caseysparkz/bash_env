@@ -16,7 +16,7 @@ alias exit="history -c;exit"
 alias facter="facter -y"
 
 ### Google
-alias google="googler"
+alias google="BROWSER=lynx googler"
 
 ### History
 alias che="clear;history -c;exit"
