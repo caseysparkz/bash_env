@@ -4,7 +4,8 @@ sudo sh -c "
 	apt upgrade -y;
 	apt install -y	\
 		facter \
-		grok \
+		fzf \
+    grok \
     lm-sensors \
 		lynx \
     neofetch \

@@ -4,7 +4,8 @@ sudo sh -c "
 	yum upgrade -y;
 	yum install -y \
 		facter \
-		grok \
+		fzf \
+    grok \
     lm-sensors \
 		lynx \
     neofetch \

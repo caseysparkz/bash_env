@@ -2,7 +2,8 @@
 sudo sh -c "
 	pacman -Syu \
 		facter \
-		grok \
+		fzf \
+    grok \
     lm_sensors \
 		lynx \
     neofetch \
