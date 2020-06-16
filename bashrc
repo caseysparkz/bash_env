@@ -128,6 +128,9 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR=vim
+export PATH="${PATH}:${HOME}/.local/bin
 
 eval $(thefuck --alias)
+
+wal -i ~/Pictures/wallpapers/dahlia.jpg > /dev/null 2>&1
 
