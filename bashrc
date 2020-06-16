@@ -128,7 +128,7 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR=vim
-export PATH="${PATH}:${HOME}/.local/bin
+export PATH="${PATH}:${HOME}/.local/bin"
 
 eval $(thefuck --alias)
 
