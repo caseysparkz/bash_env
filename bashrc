@@ -132,5 +132,5 @@ export PATH="${PATH}:${HOME}/.local/bin"
 
 eval $(thefuck --alias)
 
-wal -i ~/Pictures/wallpapers/dahlia.jpg > /dev/null 2>&1
+wal -i ${HOME}/Pictures/wallpapers/dahlia.jpg -e > /dev/null 2>&1
 
