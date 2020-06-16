@@ -6,11 +6,28 @@ mv ~/bash_env ~/.bash
 
 ### Install packages for installed distro or exit if distro not supported.
 if [ -f /etc/debian_version ]; then
-	~/.bash/distro_packages/debian.sh
+  sudo sh -c "
+    apt update &&
+    apt upgrade -y &&
+    cat ~/.bash/distro_packages/packages.txt |
+    xargs apt install -y
+  "
+  #	~/.bash/distro_packages/debian.sh
+
 elif [ -f /etc/redhat-release ]; then
- 	~/.bash/distro_packages/rhel.sh
+  sudo sh -c "
+    yum update &&
+    yum upgrade -y &&
+    cat ~/.bash/distro_packages/packages.txt |
+    xargs yum install -y
+  "
+  # 	~/.bash/distro_packages/rhel.sh
+
 elif [ -f /etc/arch-release ]; then
-	~/.bash/distro_packages/arch.sh
+  cat ~/.bash/distro_packages/packages.txt |
+  xargs sudo pacman -Syu --no-confirm
+  #	~/.bash/distro_packages/arch.sh
+
 else
 	echo "Unknown distro";
 	exit
