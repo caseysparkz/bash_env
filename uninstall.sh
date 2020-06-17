@@ -1,36 +1,36 @@
 #! /bin/bash
 
 ### Delete installed profile if it exists and replace with saved profile.
-if [ $(head -n 1 ~/.profile)="###transnat" ]; then
-	rm ~/.profile
+if [ $(head -n 1 ${HOME}/.profile)="###transnat" ]; then
+	rm ${HOME}/.profile
   
-	if [ -f ~/.profile.original ]; then
-		mv ~/.profile.original ~/.profile
+	if [ -f ${HOME}/.profile.original ]; then
+		mv ${HOME}/.profile.original ${HOME}/.profile
 	fi
 fi
 
 ### Delete installed bashrc if it exists and replace with saved bashrc.
-if [ $(head -n 1 ~/.bashrc)="###transnat" ]; then
-	rm ~/.bashrc
+if [ $(head -n 1 ${HOME}/.bashrc)="###transnat" ]; then
+	rm ${HOME}/.bashrc
   
-	if [ -f ~/.bashrc.original ]; then
-		mv ~/.bashrc.original ~/.bashrc
+	if [ -f ${HOME}/.bashrc.original ]; then
+		mv ${HOME}/.bashrc.original ${HOME}/.bashrc
 	fi
 fi
 
 ### Delete installed screenrc if it exists and replace with saved screenrc.
-if [ $(head -n 1 ~/.screenrc)="###transnat" ]; then
-	rm ~/.screenrc
+if [ $(head -n 1 ${HOME}/.screenrc)="###transnat" ]; then
+	rm ${HOME}/.screenrc
   
-	if [ -f ~/.screenrc.original ]; then
-		mv ~/.screenrc.original ~/.screenrc
+	if [ -f ${HOME}/.screenrc.original ]; then
+		mv ${HOME}/.screenrc.original ${HOME}/.screenrc
 	fi
 fi
 
 ### Delete profile folder if it exists.
-if [ -d ~/.bash ]; then
-	rm -rf ~/.bash
+if [ -d ${HOME}/.bash ]; then
+	rm -rf ${HOME}/.bash
 fi
 
 ### Load old profile.
-source ~/.profile
+source ${HOME}/.profile
