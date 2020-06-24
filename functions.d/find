@@ -1,0 +1,8 @@
+### find: A wrapper for find that excludes backup folders.
+
+find () {
+
+  find "$@" | grep -v snapshot;
+  return;
+
+}
