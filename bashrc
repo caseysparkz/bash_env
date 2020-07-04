@@ -130,6 +130,7 @@ fi
 export EDITOR=vim
 export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
+export SCRIPTS="${HOME}/.bash/scripts.d"
 
 eval $(thefuck --alias)
 
