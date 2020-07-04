@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# This script updates all git repositories in the home directory.
+### gitdoall: Update all git repositories in the home directory.
 
 for DIRECTORY in $HOME/{.bash,.vim,.config}; do
   cd $DIRECTORY &&
   git add . &&
   git pull &&
   git commit &&
-  git push
+  git push 
 done

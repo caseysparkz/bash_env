@@ -1,9 +1,9 @@
-### listf: List all functions
-listf() {
+### lsf: List all functions
+lsf() {
 
-  printf 'Functions:\n-----\n';
+  printf 'Scripts:\n-----\n';
 
-  ( grep '###' ~/.bash/functions.d/* |
+  ( grep '###' ~/.bash/scripts.d/* |
 
   grep -v 'sed' |
 
