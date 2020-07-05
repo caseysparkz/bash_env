@@ -135,6 +135,6 @@ export SCRIPTS="${HOME}/.bash/scripts.d"
 eval $(thefuck --alias)
 
 if [ -f ${HOME}/.local/bin/wal ]; then
-  wal -i ${HOME}/Pictures/wallpapers/dahlia.jpg -e -q
+  wal -i ${HOME}/Pictures/backgrounds/dahlia.jpg -e -q
 fi
 
