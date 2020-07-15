@@ -1,5 +1,5 @@
 ### lsf: List all functions
-lsf() {
+lss() {
 
   printf 'Scripts:\n-----\n';
 
