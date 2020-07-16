@@ -1,7 +1,7 @@
 ### update: distro-agnostic package updater.
 update() {
 	if [ -f /etc/arch-release ]; then
-		sudo pacman -Syu
+		sudo pacman -Syu --noconfirm
 	
 	elif [ -f /etc/os-release ]; then
 		sudo sh -c "
