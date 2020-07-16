@@ -1,14 +1,14 @@
 ### update: distro-agnostic package updater.
 update() {
-	if [ -f /etc/os-release ]; then
+	if [ -f /etc/arch-release ]; then
+		sudo pacman -Syu
+	
+	elif [ -f /etc/os-release ]; then
 		sudo sh -c "
 			apt update;
 			apt upgrade -y;
 			apt autoclean;
 			apt --purge autoremove -y"
-
-	elif [ -f /etc/arch-release ]; then
-		sudo pacman -Syu
 
 	elif [ -f /etc/rhel-release ]; then
 		sudo sh -c "
