@@ -1,4 +1,4 @@
-### myinfo: Show system information ###
+### myinfo: Show system information
 myinfo() {
 
   printf "CPU: "
