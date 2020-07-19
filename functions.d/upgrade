@@ -1,20 +1,19 @@
 ### upgrade: distro-agnostic package updater.
 upgrade() {
-	if [ -f /etc/arch-release ]; then
+	if [ -f /bin/pacman ]; then
 		sudo pacman -Syu --noconfirm
 	
-	elif [ -f /etc/os-release ]; then
+	elif [ -f /bin/apt ]; then
 		sudo sh -c "
 			apt update;
 			apt upgrade -y;
 			apt autoclean;
 			apt --purge autoremove -y"
 
-	elif [ -f /etc/rhel-release ]; then
+	elif [ -f /bin/yum ]; then
 		sudo sh -c "
 			yum update;
 			sudo yum upgrade -y;
-			sudo yum autoclean;
-			sudo yum --purge autoremove -y"
+			sudo yum autoremove -y"
 	fi
 }
