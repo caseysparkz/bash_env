@@ -5,12 +5,14 @@ printf 'Functions:\n-----\n';
 
 ( grep '###' ~/.bash/functions.d/* |
 
-grep -v 'sed' |
+  grep -v 'sed' |
 
-grep -v 'grep'|
+  grep -v 'grep'|
 
-sed -e 's/.*###\ //g'	-e '/bash_profile.d/d';
+  sed -e 's/.*###\ //g'	-e '/bash_profile.d/d';
 
-printf '\n') |
+  printf '\n'
+
+) |
 
 column -t -s: 
