@@ -110,8 +110,8 @@ if [ -f ~/.bash/aliases ]; then
 fi
 
 # Function definitions
-# Add all new functions as a new file in ~/.bash_functions.d/
-for f in ~/.bash/functions.d/*;
+# Add all new functions as a new file in ~/.bash_functions/
+for f in ~/.bash/functions/*;
 do
   source $f;
 done
@@ -130,7 +130,7 @@ fi
 export EDITOR=vim
 export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
-export SCRIPTS="${HOME}/.bash/scripts.d"
+export SCRIPTS="${HOME}/.bash/scripts"
 
 eval $(thefuck --alias)
 
