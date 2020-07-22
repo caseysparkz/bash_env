@@ -1,8 +1,8 @@
 # /bin/bash
 
 ### Change ownership to user and hide directory.
-chown -R $(whoami) ${HOME}/bash_env
-mv ${HOME}/bash_env ${HOME}/.bash
+chown -R $(whoami) ${HOME}/env
+mv ${HOME}/env ${HOME}/.bash
 
 ### Install packages for installed distro or exit if distro not supported.
 #if [ -f /etc/debian_version ]; then
