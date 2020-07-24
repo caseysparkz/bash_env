@@ -18,6 +18,9 @@ alias facter="facter -y"
 ### Google
 alias google="BROWSER=lynx googler"
 
+### GPG
+alias gpg="gpg2"
+
 ### History
 alias che="clear;history -c;exit"
 alias hgrep="history|grep -E"
