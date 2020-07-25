@@ -1,0 +1,23 @@
+### upgrade: distro-agnostic package updater.
+upgrade() {
+	if [ -f $PATH/pacman ]; then
+		sudo pacman -Syu --noconfirm
+	
+	elif [ -f $PATH/apt ]; then
+		sudo sh -c "
+			apt update &&
+			apt upgrade -y &&
+			apt autoclean &&
+			apt --purge autoremove -y"
+
+  elif [ -f $PATH/dnf ]; then
+    sudo sh -c "
+      dnf upgrade -y &&
+      dnf autoremove -y"
+
+	elif [ -f $PATH/yum ]; then
+		sudo sh -c "
+			yum upgrade -y &&
+			yum autoremove -y"
+	fi
+}
