@@ -1,0 +1,16 @@
+### instl: distro-agnostic package installer.
+
+intl() {
+
+	if [ -f /bin/pacman ]; then
+		sudo pacman -Syu $@ --noconfirm
+	
+	elif [ -f /bin/apt ]; then
+		sudo apt install $@ -y
+
+	elif [ -f /bin/dnf]; then
+		sudo dnf install $@ -y
+
+	fi
+
+}

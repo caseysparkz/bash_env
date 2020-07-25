@@ -1,0 +1,13 @@
+### updt: distro-agnostic package updater.
+
+updt() {
+
+	if [ -f /bin/apt ]; then
+		sudo apt update
+
+	elif [ -f /bin/yum ]; then
+		sudo dnf update
+
+  fi
+
+}
