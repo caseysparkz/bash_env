@@ -132,6 +132,10 @@ export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
 export SCRIPTS="${HOME}/.bash/scripts"
 
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+gpg-connect-agent updatestartuptty /bye > /dev/null
+
 eval $(thefuck --alias)
 
 if [ -f ${HOME}/.local/bin/wal ]; then
