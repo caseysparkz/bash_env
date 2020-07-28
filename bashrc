@@ -134,9 +134,9 @@ export SCRIPTS="${HOME}/.bash/scripts"
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-gpg-connect-agent updatestartuptty /bye > /dev/null
+gpg-connect-agent updatestartuptty /bye 2&>1 /dev/null
 
-eval $(thefuck --alias)
+eval $(thefuck --alias) 2&>1 /dev/null
 
 if [ -f ${HOME}/.local/bin/wal ]; then
   wal -i ${HOME}/Pictures/backgrounds/dahlia.jpg -e -q
