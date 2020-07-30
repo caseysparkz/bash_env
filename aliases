@@ -1,3 +1,10 @@
+### Default aliases
+alias ll='ls -alFh'
+alias la='ls -la'
+alias l='ls -CF'
+alias df='df -h'
+alias h='history'
+
 ### Back
 alias back="cd .."
 

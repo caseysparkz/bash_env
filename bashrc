@@ -1,4 +1,3 @@
-###transnat
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -88,14 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# System/usability aliases
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -CF'
-alias df='df -h'
-alias h='history'
-
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '$
@@ -127,6 +118,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# run automount script in background if not already running.
+if ! pgrep -x "automount.sh" > /dev/null; then
+  nohup $SCRIPTS/automount.sh > /tmp/nohup.automount.out 2>&1 &
+fi
+
 export EDITOR=vim
 export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
@@ -134,11 +130,12 @@ export SCRIPTS="${HOME}/.bash/scripts"
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-gpg-connect-agent updatestartuptty /bye 2&>1 /dev/null
+if [ -x $(which gpg-connect-agent) ]; then
+  gpg-connect-agent updatestartuptty /bye > /dev/null
+fi
 
 eval $(thefuck --alias)
 
-if [ -f ${HOME}/.local/bin/wal ]; then
+if [ -x $(which wal) ]; then
   wal -i ${HOME}/Pictures/backgrounds/dahlia.jpg -e -q
 fi
-
