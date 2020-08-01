@@ -119,9 +119,9 @@ if ! shopt -oq posix; then
 fi
 
 # run automount script in background if not already running.
-if ! pgrep -x "automount.sh" > /dev/null; then
-  nohup $SCRIPTS/automount.sh > /tmp/nohup.automount.out 2>&1 &
-fi
+#if ! pgrep -x "automount.sh" > /dev/null; then
+#  nohup $SCRIPTS/automount.sh > /tmp/nohup.automount.out 2>&1 &
+#fi
 
 export EDITOR=vim
 export PATH="${PATH}:${HOME}/.local/bin"
@@ -137,5 +137,5 @@ fi
 eval $(thefuck --alias)
 
 if [ -x $(which wal) ]; then
-  wal -i ${HOME}/Pictures/backgrounds/dahlia.jpg -e -q
+  wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -e -q 2&>1 /dev/null
 fi
