@@ -136,6 +136,6 @@ fi
 
 eval $(thefuck --alias)
 
-if [ -x $(which wal) ]; then
+if [ -x ${PATH}/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q #2&>1 /dev/null
 fi
