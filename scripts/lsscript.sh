@@ -3,13 +3,13 @@
 
 printf 'Scripts:\n-----\n';
 
-( grep '###' ~/.bash/scripts.d/* |
+( grep '###' ~/.env/scripts/* |
 
 grep -v 'sed' |
 
 grep -v 'grep'|
 
-sed -e 's/.*###\ //g'	-e '/bash_profile.d/d';
+sed -e 's/.*###\ //g';
 
 printf '\n') |
 

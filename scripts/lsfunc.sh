@@ -3,13 +3,13 @@
 
 printf 'Functions:\n-----\n';
 
-( grep '###' ~/.bash/functions.d/* |
+( grep '###' ~/.env/functions/* |
 
   grep -v 'sed' |
 
   grep -v 'grep'|
 
-  sed -e 's/.*###\ //g'	-e '/bash_profile.d/d';
+  sed -e 's/.*###\ //g';
 
   printf '\n'
 

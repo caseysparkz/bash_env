@@ -1,1 +1,3 @@
-pywal
+pywal \
+thefuck \
+tldr

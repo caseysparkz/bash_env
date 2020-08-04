@@ -1,6 +1,7 @@
 #!/bin/sh
-### If called from .bashrc, this script must be run as:
-### $ nohup $SCRIPTS/automount.sh &
+### Automatically mounts removable media, if it exists in fstab.
+# If called from .bashrc, this script must be run as:
+# $ nohup $SCRIPTS/automount.sh &
 
 pathtoname() {
   udevadm info -p /sys/"$1" | awk -v FS== '/DEVNAME/ {print $2}'

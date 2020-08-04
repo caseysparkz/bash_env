@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=ferdi
+Comment=ferdistartup script
+Exec=/tmp/.mount_ferdi.08wJuk/ferdi
+StartupNotify=false
+Terminal=false

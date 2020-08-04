@@ -92,18 +92,12 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '$
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash/aliases ]; then
-    . ~/.bash/aliases
+if [ -f ~/.env/aliases ]; then
+    . ~/.env/aliases
 fi
 
 # Function definitions
-# Add all new functions as a new file in ~/.bash_functions/
-for f in ~/.bash/functions/*;
-do
+for f in ~/.env/functions/*; do
   source $f;
 done
 
@@ -126,7 +120,7 @@ fi
 export EDITOR=vim
 export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
-export SCRIPTS="${HOME}/.bash/scripts"
+export SCRIPTS="${HOME}/.env/scripts"
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
@@ -139,4 +133,7 @@ eval $(thefuck --alias)
 if [ -x ${HOME}/.local/bin/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
 fi
-: undercover && export PS1='C:${PWD//\//\\\}> '
+
+if [ -x ${PATH}/kali-undercover ]; then
+  : undercover && export PS1='C:${PWD//\//\\\}> '
+fi
