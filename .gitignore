@@ -12,6 +12,7 @@ config/pulse
 config/qt5ct
 config/ranger
 config/spotify
+config/thefuck
 config/torbrowser
 config/VeraCrypt
 config/viewnior
