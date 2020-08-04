@@ -139,3 +139,4 @@ eval $(thefuck --alias)
 if [ -x ${HOME}/.local/bin/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
 fi
+: undercover && export PS1='C:${PWD//\//\\\}> '
