@@ -1,7 +1,7 @@
 #!/bin/bash
 ### gitdoall: Update all git repositories in the home directory.
 
-for DIRECTORY in $HOME/{.env,.config}; do
+for DIRECTORY in $HOME/{.env}; do
   cd $DIRECTORY &&
   git add . &&
   git pull &&
