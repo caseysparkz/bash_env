@@ -1,5 +1,5 @@
 #!/bin/bash
 ### env.sh: Pull latest shell environment from Github.
 
-cd $DIRECTORY &&
-git pull &&
+cd ${HOME}/.env &&
+git pull
