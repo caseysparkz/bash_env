@@ -97,9 +97,9 @@ if [ -f ~/.env/aliases ]; then
 fi
 
 # Function definitions
-for f in ~/.env/functions/*; do
-  source $f;
-done
+#for f in ~/.env/functions/*; do
+#  source $f;
+#done
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -118,10 +118,10 @@ fi
 #fi
 
 export EDITOR=vim
-#export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
 export SCRIPTS="${HOME}/.env/scripts"
 export FUNCTIONS="${HOME}/.env/functions"
+export PATH="${PATH}:${SCRIPTS}:${FUNCTIONS}"
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
