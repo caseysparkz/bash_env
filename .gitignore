@@ -1,10 +1,14 @@
 config/clipit
 config/Electron
+config/dmenu
+config/dolphinrc
+config/i3-scrot.conf
 config/epdfview
 config/Ferdi
 config/google-chrome
 config/htop
 config/Keybase
+config/knfsshare
 config/Ledger\ Live
 config/menus
 config/mimeapps.list
@@ -16,6 +20,7 @@ config/thefuck
 config/torbrowser
 config/VeraCrypt
 config/viewnior
+config/vlc
 config/volumeicon
 config/wal
 config/wireshark

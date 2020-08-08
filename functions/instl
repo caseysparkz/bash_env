@@ -2,13 +2,16 @@
 
 intl() {
 
-	if [ -f /bin/pacman ]; then
+	if [ -x /bin/pip ]; then
+    sudo pip install $@
+
+  elif [ -x /bin/pacman ]; then
 		sudo pacman -Syu $@ --noconfirm
 	
-	elif [ -f /bin/apt ]; then
+	elif [ -x /bin/apt ]; then
 		sudo apt install $@ -y
 
-	elif [ -f /bin/dnf]; then
+	elif [ -x /bin/dnf]; then
 		sudo dnf install $@ -y
 
 	fi

@@ -118,9 +118,10 @@ fi
 #fi
 
 export EDITOR=vim
-export PATH="${PATH}:${HOME}/.local/bin"
+#export PATH="${PATH}:${HOME}/.local/bin"
 export TERM=xterm-256color
 export SCRIPTS="${HOME}/.env/scripts"
+export FUNCTIONS="${HOME}/.env/functions"
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
@@ -128,7 +129,9 @@ if [ -x $(which gpg-connect-agent) ]; then
   gpg-connect-agent updatestartuptty /bye > /dev/null
 fi
 
+# thefuck config.
 eval $(thefuck --alias)
+alias darn="fuck"
 
 if [ -x ${HOME}/.local/bin/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
