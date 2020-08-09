@@ -12,6 +12,7 @@ config/knfsshare
 config/Ledger\ Live
 config/menus
 config/mimeapps.list
+config/monero-project
 config/pulse
 config/qt5ct
 config/ranger
