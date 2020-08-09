@@ -133,7 +133,7 @@ fi
 eval $(thefuck --alias)
 alias darn="fuck"
 
-if [ -x ${HOME}/.local/bin/wal ]; then
+if [ -x ${PATH}/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
 fi
 
