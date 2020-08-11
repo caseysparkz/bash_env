@@ -1,3 +1,4 @@
+bashtop \
 facter \
 grok \
 lm_sensors \

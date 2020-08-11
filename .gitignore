@@ -1,3 +1,4 @@
+config/bashtop
 config/clipit
 config/Electron
 config/dmenu
@@ -25,4 +26,5 @@ config/vlc
 config/volumeicon
 config/wal
 config/wireshark
+config/xfce4/
 config/Yubico
