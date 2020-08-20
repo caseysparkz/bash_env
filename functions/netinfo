@@ -4,7 +4,9 @@ netinfo() {
   printf "Network Information\n";
   printf "===================\n";
 
-  (printf "Local IP:"
+  (printf "Public IP:"
+    printf "$(curl ipinfo.io/ip 2> /dev/null )\n"
+    printf "Local IP:"
     printf "$(ifconfig | awk '$1=="inet"{printf $2; exit}')\n"
     printf "Netmask:"
     printf "$(ifconfig | awk '$3=="netmask"{printf $4; exit}')\n"

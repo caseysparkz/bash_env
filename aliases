@@ -3,7 +3,6 @@ alias ll='ls -alFh'
 alias la='ls -la'
 alias l='ls -CF'
 alias df='df -h'
-alias h='history'
 
 ### Back
 alias back="cd .."
@@ -29,7 +28,7 @@ alias google="BROWSER=lynx googler"
 alias gpg="gpg2"
 
 ### History
-alias che="clear;history -c;exit"
+alias h='history'
 alias hgrep="history|grep -E"
 
 ### IP
@@ -39,9 +38,7 @@ alias ipe="curl ipinfo.io/ip"
 alias msfconsole="msfconsole --quiet -x \"db_connect ${user}@msf\""
 
 ### MySQL
-alias mysql="mysql -u caseyadmin -p"
-alias mysql-pt="mysql -D primetrust -u caseyadmin -p"
-alias mysql-banq="mysql -D banq -u caseyadmin -p"
+alias mysql="mysql -u user -p"
 
 ### Python 3
 alias va="source ./venv/bin/activate"
@@ -49,7 +46,6 @@ alias ve="python -m venv ./venv"
 alias www="python -m http.server 8000"
 
 ### rm
-#alias rm="safe-rm"
 alias rmf="rm -rf"
 
 ### Sensors
@@ -61,8 +57,5 @@ alias src="source ~/.profile"
 ### Speed test
 alias speed="speedtest-cli --server 2406 --simple"
 
-### SSH
-alias calypso="ssh csparks@calypso"
-
 ### Sudo
-#alias sudo="sudo -E"
+alias sudo="sudo -E"

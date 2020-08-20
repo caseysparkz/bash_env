@@ -1,6 +1,6 @@
-### upgr: distro-agnostic package upgrader.
+### upgrade: distro-agnostic package upgrader.
 
-upgr() {
+upgrade() {
 
 	if [ -x /bin/pacman ]; then
 		sudo pacman -Syu --noconfirm

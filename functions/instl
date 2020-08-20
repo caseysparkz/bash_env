@@ -1,6 +1,6 @@
-### instl: distro-agnostic package installer.
+### install: distro-agnostic package installer.
 
-intl() {
+install() {
 
 	if [ -x /bin/pip ]; then
     sudo pip install $@

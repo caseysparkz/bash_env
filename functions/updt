@@ -1,6 +1,6 @@
-### updt: distro-agnostic package updater.
+### update: distro-agnostic package updater.
 
-updt() {
+update() {
 
 	if [ -x /bin/apt ]; then
 		sudo apt update

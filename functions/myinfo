@@ -1,5 +1,5 @@
-### myinfo: Show system information
-myinfo() {
+### devinfo: Show system hardware information
+devinfo() {
 
   printf "CPU: "
   cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
@@ -15,11 +15,17 @@ myinfo() {
   uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5 }' | sed 's/,//g'
   printf "\n"
 
-## Need to write to only execute when `cputemp` is present
-#  if cputemp | grep "not found" > /dev/null; then
-#    cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
-#    cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
-#    cputemp | awk '{ printf "%s %s", $1 $2 }'
-#  fi
+# Need to write to only execute when `cputemp` is present
+  if [ -x $(which sensors) ]; then
+
+    if cputemp | grep "not found" > /dev/null; then
+
+      cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
+      cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
+      cputemp | awk '{ printf "%s %s", $1 $2 }'
+
+    fi
+
+  fi
 
 }
