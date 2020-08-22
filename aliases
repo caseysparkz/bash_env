@@ -21,6 +21,9 @@ alias exit="history -c;exit"
 ### Facter as YAML
 alias facter="facter -y"
 
+### Forticlient VPN
+alias forticlient="sudo openfortivpn -c /etc/openfortivpn/primetrust"
+
 ### Google
 alias google="BROWSER=lynx googler"
 
