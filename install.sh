@@ -33,19 +33,5 @@ if [ -f ${HOME}/.vimrc ] && [ ! -L ${HOME}/.vimrc ]; then
 fi
 ln -s ${HOME}/.env/vim/vimrc ${HOME}/.vimrc
 
-### Remove existing dotfiles and replace with new.
-if [ -d ${HOME}/.config ]; then
-  rm -rf ${HOME}/.config
-fi
-ln -s ${HOME}/.env/config ${HOME}/.config
-
-
-### Link xrdb configs.
-if [ -x /usr/bin/xrdb ]; then
-  ln -s ${HOME}/.env/config/Xresources ${HOME}/.Xresources
-  ln -s ${HOME}/.env/config/xinitrc ${HOME}/.xinitrc
-  ln -s ${HOME}/.env/config/Xclients ${HOME}/.Xclients
-fi
-
 ### Load new profile
 source ${HOME}/.profile
