@@ -17,6 +17,7 @@ alias chx="chmod 755"
 
 ### Exit and clear history
 alias exit="history -c;exit"
+alias quit="exit"
 
 ### Facter as YAML
 alias facter="facter -y"
