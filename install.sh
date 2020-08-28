@@ -16,6 +16,7 @@ if [ -f ${HOME}/.bashrc ] && [ ! -L ${HOME}/.bashrc ]; then
 fi
 ln -s ${HOME}/.env/bashrc ${HOME}/.bashrc
 
+
 ### Remove existing screenrc and symlink to new bashrc.
 if [ -f ${HOME}/.screenrc ] && [ ! -L ${HOME}/.screenrc ]; then
   rm ${HOME}/.screenrc
