@@ -124,10 +124,11 @@ export FUNCTIONS="${HOME}/.env/functions"
 export PATH="${PATH}:${SCRIPTS}:${FUNCTIONS}"
 
 export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-if [ -x $(which gpg-connect-agent) ]; then
-  gpg-connect-agent updatestartuptty /bye > /dev/null
-fi
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+#if [ -x $(which gpg-connect-agent) ]; then
+#  gpg-connect-agent updatestartuptty /bye > /dev/null
+#fi
 
 # thefuck config.
 eval $(thefuck --alias)
