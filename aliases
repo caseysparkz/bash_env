@@ -25,6 +25,9 @@ alias facter="facter -y"
 ### Forticlient VPN
 alias forticlient="sudo openfortivpn -c /etc/openfortivpn/primetrust"
 
+### Fuck
+alias darn="fuck"
+
 ### Google
 alias google="BROWSER=lynx googler"
 

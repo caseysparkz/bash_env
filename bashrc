@@ -117,22 +117,13 @@ fi
 #  nohup $SCRIPTS/automount.sh > /tmp/nohup.automount.out 2>&1 &
 #fi
 
-export EDITOR=vim
-export TERM=xterm-256color
-export SCRIPTS="${HOME}/.env/scripts"
-export FUNCTIONS="${HOME}/.env/functions"
-export PATH="${PATH}:${SCRIPTS}:${FUNCTIONS}"
-
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-#if [ -x $(which gpg-connect-agent) ]; then
-#  gpg-connect-agent updatestartuptty /bye > /dev/null
-#fi
+if [ -f ~/.env/vars.sh ]; then
+  source ~/.env/vars.sh
+  gpgconf --launch gpg-agent
+fi
 
 # thefuck config.
 eval $(thefuck --alias)
-alias darn="fuck"
 
 if [ -x /usr/bin/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
