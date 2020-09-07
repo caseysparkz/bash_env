@@ -119,17 +119,16 @@ fi
 
 if [ -f ~/.env/vars.sh ]; then
   source ~/.env/vars.sh
-#  gpgconf --launch gpg-agent
-  gpg-connect-agent updatestartuptty /bye > /dev/null
+  gpgconf --launch gpg-agent
 fi
 
 # thefuck config.
 eval $(thefuck --alias)
 
-if [ -x "${PATH}/wal" ]; then
+if [ -x /usr/bin/wal ]; then
   wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
 fi
 
-if [ -x "${PATH}/kali-undercover" ]; then
+if [ -x ${PATH}/kali-undercover ]; then
   : undercover && export PS1='C:${PWD//\//\\\}> '
 fi
