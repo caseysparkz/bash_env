@@ -1,6 +1,6 @@
 ### Default aliases
-alias ll='ls -alFh'
-alias la='ls -la'
+alias ll='ls -lFh'
+alias la='ls -lFha'
 alias l='ls -CF'
 alias df='df -h'
 
