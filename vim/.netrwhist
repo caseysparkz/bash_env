@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/user/.config/eDEX-UI/keyboards'
 let g:netrw_dirhist_7='/etc/ansible/host_vars'
 let g:netrw_dirhist_6='/etc/anacron'
 let g:netrw_dirhist_5='/etc/X11/xorg.conf.d'
