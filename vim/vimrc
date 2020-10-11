@@ -11,9 +11,9 @@ endif
 
 syntax enable
 
-" For everything else, use a tab width of 2 space chars.
-set tabstop=2       " The width of a TAB is set to 2.
-set shiftwidth=2    " Indents will have a width of 2.
-set softtabstop=2   " Sets the number of columns for a TAB.
-set expandtab       " Expand TABs to spaces.
-set number          " Put line numbers.
+set tabstop=2         " The width of a TAB is set to 2.
+set shiftwidth=2      " Indents will have a width of 2.
+set softtabstop=2     " Sets the number of columns for a TAB.
+set expandtab         " Expand TABs to spaces.
+set number            " Put line numbers.
+set spelllang=en_us   " Set spellcheck language.
