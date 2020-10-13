@@ -127,3 +127,5 @@ fi
 if [ -x ${PATH}/kali-undercover ]; then
   : undercover && export PS1='C:${PWD//\//\\\}> '
 fi
+
+screenfetch
