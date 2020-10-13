@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -9,13 +5,12 @@ case $- in
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# set history length and file size
 HISTSIZE=1000
 HISTFILESIZE=2000
 
@@ -23,9 +18,8 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+# match all files and zero or more directories and subdirectories with "**"
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -35,7 +29,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set a fancy prompt (non-color, unless we know we "want" color)
+# set a fancy prompt
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
@@ -43,7 +37,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -74,11 +68,10 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r ${HOME}/.dircolors && eval "$(dircolors -b ${HOME}/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -92,14 +85,16 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '$
 
 # Alias definitions.
-if [ -f ~/.env/aliases ]; then
-    . ~/.env/aliases
+if [ -f ${HOME}/.env/aliases ]; then
+    . ${HOME}/.env/aliases
 fi
 
 # Function definitions
-for f in ~/.env/functions/*; do
-  source $f;
-done
+if [ -d ${HOME}/.env/functions ]; then
+  for f in ${HOME}/.env/functions/*; do
+    source $f;
+  done
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -117,8 +112,8 @@ fi
 #  nohup $SCRIPTS/automount.sh > /tmp/nohup.automount.out 2>&1 &
 #fi
 
-if [ -f ~/.env/vars.sh ]; then
-  source ~/.env/vars.sh
+if [ -f ${HOME}/.env/vars.sh ]; then
+  source ${HOME}/.env/vars.sh
   gpgconf --launch gpg-agent
 fi
 
@@ -126,7 +121,7 @@ fi
 eval $(thefuck --alias)
 
 if [ -x /usr/bin/wal ]; then
-  wal -i $(grep file ~/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
+  wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
 fi
 
 if [ -x ${PATH}/kali-undercover ]; then

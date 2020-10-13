@@ -4,9 +4,6 @@ alias la='ls -lFha'
 alias l='ls -CF'
 alias df='df -h'
 
-### Back
-alias back="cd .."
-
 ### Clear
 alias c="clear"
 alias cl="c;ll"
@@ -15,18 +12,11 @@ alias cl="c;ll"
 alias chr="chmod 644"
 alias chx="chmod 755"
 
-### Exit and clear history
-alias exit="history -c;exit"
-alias quit="exit"
-
 ### Facter as YAML
 alias facter="facter -y"
 
 ### Fuck
 alias darn="fuck"
-
-### Google
-alias google="BROWSER=lynx googler"
 
 ### GPG
 alias gpg="gpg2"
@@ -42,7 +32,7 @@ alias ipe="curl ipinfo.io/ip"
 alias msfconsole="msfconsole --quiet -x \"db_connect ${user}@msf\""
 
 ### MySQL
-alias mysql="mysql -u user -p"
+alias mysql="mysql -u $(whoami) -p"
 
 ### Python 3
 alias va="source ./venv/bin/activate"
@@ -56,10 +46,11 @@ alias rmf="rm -rf"
 alias cputemp="sensors | grep Core"
 
 ### Source
-alias src="source ~/.profile"
+alias src="source ${HOME}/.profile"
 
 ### Speed test
 alias speed="speedtest-cli --server 2406 --simple"
 
 ### Sudo
-alias please="sudo -E"
+alias sudo="sudo -E"
+alias please="sudo"
