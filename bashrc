@@ -128,4 +128,6 @@ if [ -x ${PATH}/kali-undercover ]; then
   : undercover && export PS1='C:${PWD//\//\\\}> '
 fi
 
-screenfetch
+if [ $HOSTNAME == "dahlia" ]; then
+  screenfetch
+fi
