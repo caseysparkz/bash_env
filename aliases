@@ -46,7 +46,7 @@ alias rmf="rm -rf"
 alias cputemp="sensors | grep Core"
 
 ### Source
-alias src="source ${HOME}/.profile"
+alias src="source ${HOME}/.profile && ${HOME}/.bashrc"
 
 ### Speed test
 alias speed="speedtest-cli --server 2406 --simple"
