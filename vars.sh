@@ -4,6 +4,7 @@
 export EDITOR=vim
 export TERM=xterm-256color
 export FUNCTIONS="${HOME}/.env/functions"
+export SCRIPTS="${HOME}/.env/scripts"
 
 # Yubikey+SSH variables for .bashrc
 export GPG_TTY="$(tty)"
