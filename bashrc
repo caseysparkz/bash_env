@@ -120,14 +120,14 @@ fi
 # thefuck config.
 eval $(thefuck --alias)
 
-if [ -x /usr/bin/wal ]; then
-  wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q
+if [ -x $(which wal) ]; then
+  wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q -b 000000
 fi
 
 if [ -x ${PATH}/kali-undercover ]; then
   : undercover && export PS1='C:${PWD//\//\\\}> '
 fi
 
-if [ $HOSTNAME == "dahlia" ]; then
+if [ -x $(which screenfetch) ]; then
   screenfetch
 fi
