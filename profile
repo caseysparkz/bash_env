@@ -20,3 +20,8 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="/var/lib/snapd/snap/bin:$PATH"
 fi
+
+# set PATH so it includes script directory if it exists
+if [ -d "$HOME/.env/scripts" ] ; then
+    PATH="$HOME/.env/scripts:$PATH"
+fi
