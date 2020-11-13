@@ -7,6 +7,7 @@ alias df='df -h'
 ### Clear
 alias c="clear"
 alias cl="c;ll"
+alias cla="c;la"
 
 ### chmod
 alias chr="chmod 644"
