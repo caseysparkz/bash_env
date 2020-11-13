@@ -1,6 +1,0 @@
-### airplay: screensharing via airplay.
-airplay() {
-
-  sudo java -jar /bin/airplay.jar -h $1 -d
-
-}

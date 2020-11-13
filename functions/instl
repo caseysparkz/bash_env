@@ -2,18 +2,21 @@
 
 install() {
 
-	if [ -x /bin/pip ]; then
-    sudo pip install $@
-
-  elif [ -x /bin/pacman ]; then
-		sudo pacman -Syu $@ --noconfirm
-	
-	elif [ -x /bin/apt ]; then
+	if [ -x /usr/bin/apt ]; then
 		sudo apt install $@ -y
 
 	elif [ -x /bin/dnf]; then
 		sudo dnf install $@ -y
 
-	fi
+  elif [ -x /usr/bin/pacman ]; then
+		sudo pacman -Syu $@ --noconfirm
+	
+  elif [ -x /usr/bin/snap ]; then
+    sudo snap install $@
+
+	elif [ -x /bin/pip ]; then
+    sudo pip install $@
+
+  fi
 
 }
