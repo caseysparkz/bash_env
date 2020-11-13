@@ -1,8 +1,8 @@
 #!/bin/bash
 # Script to quickily pass PGP-encrypted scripts to bash.
 
-gpg-connect-agent updatestartuptty /bye
+gpg-connect-agent updatestartuptty /bye 2&>1 /dev/null
 
-for SCRIPT in $@; do
-  gpg --decrypt $SCRIPT | bash -s
+for GSH in $@; do
+  gpg --decrypt $GSH 2> /dev/null | bash -s
 done
