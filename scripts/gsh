@@ -3,4 +3,6 @@
 
 gpg-connect-agent updatestartuptty /bye
 
-gpg --decrypt $1 | bash -s
+for SCRIPT in $@; do
+  gpg --decrypt $SCRIPT | bash -s
+done
