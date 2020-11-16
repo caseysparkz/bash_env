@@ -121,10 +121,6 @@ if [ -x ${PATH}/thefuck ]; then
   eval $(thefuck --alias)
 fi
 
-if [ -x ${PATH}/wal -a -f ${HOME}/.config/nitrogen/bg-saved.cfg ]; then
+if [ -x /usr/bin/wal ]; then
   wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q -b 000000
-fi
-
-if [ -x ${PATH}/kali-undercover ]; then
-  : undercover && export PS1='C:${PWD//\//\\\}> '
 fi
