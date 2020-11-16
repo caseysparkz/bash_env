@@ -117,10 +117,11 @@ if [ -f ${HOME}/.env/vars.sh ]; then
   gpgconf --launch gpg-agent
 fi
 
-# thefuck config.
-eval $(thefuck --alias)
+if [ -x ${PATH}/thefuck ]; then
+  eval $(thefuck --alias)
+fi
 
-if [ -x $(which wal) ]; then
+if [ -x ${PATH}/wal -a -f ${HOME}/.config/nitrogen/bg-saved.cfg ]; then
   wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q -b 000000
 fi
 

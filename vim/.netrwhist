@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/user/.env/packages'
 let g:netrw_dirhist_9='/home/user/.config'
 let g:netrw_dirhist_8='/home/user/.config/eDEX-UI/keyboards'
 let g:netrw_dirhist_7='/etc/ansible/host_vars'
