@@ -1,3 +1,9 @@
+#!/bin/bash
+
+gpg-connect-agent updatestartuptty /bye > /dev/null 2>&1
+
+echo | gpg --decrypt 2> /dev/null << EOF | bash -s
+
 -----BEGIN PGP MESSAGE-----
 
 hQIMAwAAAAAAAAAAAQ/+J6vNCJdpyPuxSSn8x4A/bkEmD4XtCfhPkH2HfXLntqZ1
@@ -32,3 +38,5 @@ hgDQx1yW68xE92FBzscpZUiYdgyN8wKtQbiwVIgi4XDQJlw8EynPMkyDHIFkeuJv
 95McExb3qs5n1Dla9SMr4szeJ7Hh6N2tLijVgBxrziM=
 =RYty
 -----END PGP MESSAGE-----
+
+EOF
