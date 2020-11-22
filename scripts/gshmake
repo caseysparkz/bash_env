@@ -1,7 +1,10 @@
 #!/bin/bash
 ### gshmake: Makes executable, bash-interpreted, PGP-encrypted scripts.
 # gshmake accepts one script as an argument.
-# Input scripts **should not** include a shebang (#!/bin/bash)
+# Input scripts need not include a shebang (#!/bin/bash)
+
+# Remove shebang from cleartext.
+sed -i '/\#\!\/bin\//d' $1
 
 # Encrypt original script and output to a temporary file.
 gpg2 --output /tmp/$1.asc --sign --armor --encrypt $1 
