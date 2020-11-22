@@ -1,5 +1,5 @@
 #!/bin/bash
-# Record primary display.
+### rscreen: Record primary display.
 
 ffmpeg                                                \
   -f x11grab                                          \

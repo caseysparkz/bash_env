@@ -1,4 +1,5 @@
 #!/bin/bash
+### order: Renames all files of a given extension in a directory to a number sequence starting with a given number.
 
 printf "Start numbering at:\n"
 read START

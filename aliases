@@ -20,6 +20,7 @@ alias facter="facter -y"
 alias darn="fuck"
 
 ### GPG
+alias gca="gpg-connect-agent updatestartuptty /bye"
 alias gpg="gpg2"
 
 ### History
