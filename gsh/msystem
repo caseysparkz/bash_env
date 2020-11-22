@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gpg --decrypt 2> /dev/null << EOF | bash -s $@
+gpg2 --decrypt 2> /dev/null << EOF | bash -s $@
 
 -----BEGIN PGP MESSAGE-----
 

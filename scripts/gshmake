@@ -1,0 +1,21 @@
+#!/bin/bash
+
+gpg2 --output /tmp/$1.asc --sign --armor --encrypt $1 
+
+#touch ${GSH}/$1
+
+cat > ${GSH}/$1 << EOF
+#!/bin/bash
+
+gpg2 --decrypt 2> /dev/null << EOF | bash -s \$@
+
+EOF
+
+cat /tmp/$1.asc >> ${GSH}/$1
+
+printf "\nEOF" >> ${GSH}/$1
+
+rm /tmp/$1.asc
+
+chown $(whoami):$(whoami) ${GSH}/$1
+chmod +x ${GSH}/$1
