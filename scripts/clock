@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 ### clock: Simple CLI Clock
 
 while true; do

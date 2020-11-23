@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 ### happybirthday: Plays the Happy Birthday song.
 
 for i in {D,D,E,D,G,F\#,D,D,E,D,A,G,D,D,D5,B,G,F\#,E,C5,B,G,A,G}; do

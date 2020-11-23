@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 ### lsfunc: List all functions
 
 printf 'Functions:\n-----\n';
