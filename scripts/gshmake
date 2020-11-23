@@ -11,10 +11,10 @@ fi
 gpg2 --yes --output ${TEMPFILE} --sign --armor --encrypt "${1}"
 
 # Make gsh script and prepend shebang, cleartext commands.
-cat > "${1}".gsh <<-EOF
-  #!/bin/bash
+cat > "${1}".gsh << "EOF"
+#!/bin/bash
 
-  gpg2 --decrypt 2> /dev/null << EOF | bash -s \$@
+gpg2 --decrypt 2> /dev/null << EOF | bash -s $@
 
 EOF
 
