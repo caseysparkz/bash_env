@@ -124,3 +124,5 @@ fi
 if [ -x /usr/bin/wal ]; then
   wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q -b 000000
 fi
+
+eval "$(thefuck --alias)"
