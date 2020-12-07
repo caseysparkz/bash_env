@@ -1,0 +1,3 @@
+[submodule "scripts/Meraki-Traffic-Analyzer"]
+	path = scripts/Meraki-Traffic-Analyzer
+	url = https://github.com/picnicsecurity/Meraki-Traffic-Analyzer.git
