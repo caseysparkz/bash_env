@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/caseysparks/.ssh'
 let g:netrw_dirhist_1='/home/caseysparks/.env/packages'
 let g:netrw_dirhist_0='/home/user/.env/packages'
 let g:netrw_dirhist_9='/home/user/.config'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/etc/anacron'
 let g:netrw_dirhist_5='/etc/X11/xorg.conf.d'
 let g:netrw_dirhist_4='/home/user/.config/neofetch'
 let g:netrw_dirhist_3='/etc/ansible/host_vars'
-let g:netrw_dirhist_2='/home/user/.config/nitrogen'
