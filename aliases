@@ -21,7 +21,7 @@ alias darn="fuck"
 
 ### GPG
 alias gca="gpg-connect-agent updatestartuptty /bye"
-alias gpg="gpg2"
+#alias gpg="gpg2"
 
 ### History
 alias h='history'
