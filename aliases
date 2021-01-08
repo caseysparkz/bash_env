@@ -31,7 +31,7 @@ alias hgrep="history|grep -E"
 alias ipe="curl ipinfo.io/ip"
 
 ### Metasploit
-alias msfconsole="msfconsole --quiet -x \"db_connect ${user}@msf\""
+alias msf="msfconsole --quiet -x \"db_connect ${whoami}@msf\""
 
 ### MySQL
 alias mysql="mysql -u $(whoami) -p"
