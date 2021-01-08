@@ -28,7 +28,7 @@ alias h='history'
 alias hgrep="history|grep -E"
 
 ### IP
-alias ipe="curl ipinfo.io/ip"
+alias ipe="curl ipinfo.io/ip && printf '\n'"
 
 ### Metasploit
 alias msf="msfconsole --quiet -x \"db_connect ${whoami}@msf\""
