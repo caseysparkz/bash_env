@@ -11,5 +11,5 @@ snapd \
 speedtest-cli \
 thefuck	\
 tldr \
-vim
+vim \
 whois 
