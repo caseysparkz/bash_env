@@ -112,12 +112,12 @@ fi
 #  nohup $SCRIPTS/automount.sh > /tmp/nohup.automount.out 2>&1 &
 #fi
 
-if [ -f ${HOME}/.env/vars.sh ] && [ -x $(which gpgconf) ]; then
+if [ -f ${HOME}/.env/vars.sh ] && [ -x /usr/bin/gpgconf ]; then
   source ${HOME}/.env/vars.sh
   gpgconf --launch gpg-agent
 fi
 
-if [ -x $(which thefuck) ]; then
+if [ -x /usr/bin/thefuck ]; then
   eval $(thefuck --alias)
 fi
 
