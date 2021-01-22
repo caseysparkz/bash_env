@@ -1,3 +1,4 @@
+.gitignore
 scripts/Meraki-Traffic-Analyzer/excel
 scripts/Meraki-Traffic-Analyzer/logs
 scripts/Meraki-Traffic-Analyzer/meraki_logs
