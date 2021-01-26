@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 gpg2 --decrypt 2> /dev/null << EOF | bash -s $@
 
