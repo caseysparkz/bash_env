@@ -1,12 +1,9 @@
 #!/bin/bash
-# WiFi Pineapple Connector for Linux
-# Software License Agreement - https://shop.hak5.org/pages/software-license-agreement
-# Terms of Service - https://shop.hak5.org/pages/terms-of-service
 
 wpver=7.0
 spineapplenmask=255.255.255.0
 spineapplenet=172.16.42.0/24
-spineapplelan=enp0s20f0u4
+spineapplelan=enp0s20f0u3
 spineapplewan=wlp2s0
 spineapplegw=192.168.1.99
 spineapplehostip=172.16.42.42
@@ -31,7 +28,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 function banner {
-    # Show random banner because 1337
+
     b=$(( ( RANDOM % 5 ) + 1 ))
     case "$b" in
         1)
@@ -203,7 +200,7 @@ function guidedsetup {
         fi
     done
     printf "[Checking]"
-    sleep 5 # Wait as the system is likely to rename interface. Sleeping rather than more advanced error handling becasue reasons. Try: dmesg | tail | grep -E 'asix.*renamed'
+    sleep 5
     pineappleiface=$(ip addr | grep '00:[cC]0:[cC][aA]\|00:13:37' -B1 | awk {'print $2'} | head -1 | grep 'eth\|en' | sed 's/://g')
     printf "\n    Detected WiFi Pineapple on interface $(tput bold)$pineappleiface$(tput sgr0)\n";
     read -r -p "    Use the above detected WiFi Pineapple interface?    [Y/n]? " pi
@@ -237,19 +234,19 @@ function advancedsetup {
         [yY][eE][sS]|[yY])
             read -r -p "    WiFi Pineapple Network           [172.16.42.0/24]: " spineapplenet
             if [[ $spineapplenet == '' ]]; then
-            spineapplenet=172.16.42.0/24 # Pineapple network. Default is 172.16.42.0/24
+            spineapplenet=172.16.42.0/24
             fi
             read -r -p "    WiFi Pineapple Netmask           [255.255.255.0]: " spineapplenmask
             if [[ $spineapplenmask == '' ]]; then
-            spineapplenmask=255.255.255.0 #Default netmask for /24 network
+            spineapplenmask=255.255.255.0
             fi
             read -r -p "    Host IP Address                  [172.16.42.42]: " spineapplehostip
             if [[ $spineapplehostip == '' ]]; then
-            spineapplehostip=172.16.42.42 #IP Address of host computer
+            spineapplehostip=172.16.42.42
             fi
             read -r -p "    WiFi Pineapple IP Address        [172.16.42.1]: " spineappleip
             if [[ $spineappleip == '' ]]; then
-            spineappleip=172.16.42.1 #Don't forget your towel
+            spineappleip=172.16.42.1
             fi
             printf "\n    Advanced IP settings will be saved for future sessions.\n    Default settings may be restored by selecting Advanced IP settings and\n    pressing [ENTER] when prompted for IP settings.\n\n    Press any key to continue"
             savechanges
@@ -291,14 +288,14 @@ function connectsaved {
     printf "    $(tput setaf 6) (_  _(_ ,)$(tput sgr0)       $(tput setaf 7)\___\\$(tput sgr0)        $(tput setaf 3)'<><>'$(tput sgr0)\n"
     ip addr add $spineapplehostip/$spineapplenmask dev $spineapplelan
     ip link set $spineapplelan up
-    echo '1' > /proc/sys/net/ipv4/ip_forward # Enable IP Forwarding
-    iptables -X #clear chains and rules
+    echo '1' > /proc/sys/net/ipv4/ip_forward
+    iptables -X
     iptables -F
-    iptables -A FORWARD -i $spineapplewan -o $spineapplelan -s $spineapplenet -m state --state NEW -j ACCEPT #setup IP forwarding
+    iptables -A FORWARD -i $spineapplewan -o $spineapplelan -s $spineapplenet -m state --state NEW -j ACCEPT
     iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
     iptables -A POSTROUTING -t nat -j MASQUERADE
-    ip route del default #remove default route
-    ip route add default via $spineapplegw dev $spineapplewan #add default gateway
+    ip route del default
+    ip route add default via $spineapplegw dev $spineapplewan
     printf "\n    Browse to http://$spineappleip:1471\n\n"
     exit
 }
@@ -310,7 +307,7 @@ function bunny {
     exit
 }
 
-banner #remove for less 1337
+#banner
 showsettings
 if [[ "$sfirsttime" == "1" ]]; then
     printf "
