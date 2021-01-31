@@ -13,6 +13,9 @@ alias cla="c;la"
 alias chr="chmod 644"
 alias chx="chmod 755"
 
+### exit
+alias q="exit"
+
 ### Facter as YAML
 alias facter="facter -y"
 
