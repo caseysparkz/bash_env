@@ -3,6 +3,7 @@ alias ll='ls -lFh'
 alias la='ls -lFha'
 alias l='ls -CF'
 alias df='df -h'
+alias lgrep='ls|grep'
 
 ### Clear
 alias c="clear"

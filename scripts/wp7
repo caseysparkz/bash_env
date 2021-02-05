@@ -3,7 +3,7 @@
 wpver=7.0
 spineapplenmask=255.255.255.0
 spineapplenet=172.16.42.0/24
-spineapplelan=enp0s20f0u3
+spineapplelan=enp0s20f0u4
 spineapplewan=wlp2s0
 spineapplegw=192.168.1.99
 spineapplehostip=172.16.42.42
