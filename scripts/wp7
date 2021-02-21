@@ -1,14 +1,17 @@
-#!/bin/bash
+#!/bin/env bash
+# WiFi Pineapple Connector for Linux
+# Software License Agreement - https://shop.hak5.org/pages/software-license-agreement
+# Terms of Service - https://shop.hak5.org/pages/terms-of-service
 
 wpver=7.0
 spineapplenmask=255.255.255.0
 spineapplenet=172.16.42.0/24
-spineapplelan=enp0s20f0u4
-spineapplewan=wlp2s0
-spineapplegw=192.168.1.99
+spineapplelan=eth1
+spineapplewan=wlan0
+spineapplegw=192.168.1.1
 spineapplehostip=172.16.42.42
 spineappleip=172.16.42.1
-sfirsttime=0
+sfirsttime=1
 
 mach="$(uname -s)"
 case "${mach}" in
@@ -26,59 +29,6 @@ if [ "$EUID" -ne 0 ]; then
     echo "This WiFi Pineapple Connection script requires root."
     exit 1
 fi
-
-function banner {
-
-    b=$(( ( RANDOM % 5 ) + 1 ))
-    case "$b" in
-        1)
-        echo $(tput setaf 3)
-        echo "    _       ___ _______    ____  _                              __    ";
-        echo "   | |     / (_) ____(_)  / __ \\(_)___  ___  ____ _____  ____  / /__ ";
-        echo "   | | /| / / / /_  / /  / /_/ / / __ \/ _ \/ __ '/ __ \/ __ \/ / _ \\";
-        echo "   | |/ |/ / / __/ / /  / ____/ / / / /  __/ /_/ / /_/ / /_/ / /  __/ ";
-        echo "   |__/|__/_/_/   /_/  /_/   /_/_/ /_/\___/\__,_/ .___/ .___/_/\___/  ";
-        echo "                                               $(tput setaf 3)/_/   /_/$(tput sgr0)       v$wpver";
-        ;;
-        2)
-        echo $(tput setaf 3)
-        echo "           ___       __          ___       __   __        ___ ";
-        echo "   |  | | |__  |    |__) | |\ | |__   /\  |__) |__) |    |__  ";
-        echo "   |/\| | |    |    |    | | \| |___ /~~\ |    |    |___ |___ ";
-        echo "                                                       $(tput sgr0)v$wpver"
-        ;;
-        3)
-        echo $(tput setaf 3)
-        echo "  ▄▄▌ ▐ ▄▌▪  ·▄▄▄▪       ▄▄▄·▪   ▐ ▄ ▄▄▄ . ▄▄▄·  ▄▄▄· ▄▄▄·▄▄▌  ▄▄▄ .";
-        echo "  ██· █▌▐███ ▐▄▄·██     ▐█ ▄███ •█▌▐█▀▄.▀·▐█ ▀█ ▐█ ▄█▐█ ▄███•  ▀▄.▀·";
-        echo "  ██▪▐█▐▐▌▐█·██▪ ▐█·     ██▀·▐█·▐█▐▐▌▐▀▀▪▄▄█▀▀█  ██▀· ██▀·██▪  ▐▀▀▪▄";
-        echo "  ▐█▌██▐█▌▐█▌██▌.▐█▌    ▐█▪·•▐█▌██▐█▌▐█▄▄▌▐█ ▪▐▌▐█▪·•▐█▪·•▐█▌▐▌▐█▄▄▌";
-        echo "   ▀▀▀▀ ▀▪▀▀▀▀▀▀ ▀▀▀    .▀   ▀▀▀▀▀ █▪ ▀▀▀  ▀  ▀ .▀   .▀   .▀▀▀  ▀▀▀ ";
-        echo "                                                               $(tput sgr0)v$wpver"
-        ;;
-        4)
-        echo $(tput setaf 3)
-        echo "  ▄ ▄   ▄█ ▄████  ▄█    █ ▄▄  ▄█    ▄   ▄███▄   ██   █ ▄▄  █ ▄▄  █     ▄███▄ ";
-        echo " █   █  ██ █▀   ▀ ██    █   █ ██     █  █▀   ▀  █ █  █   █ █   █ █     █▀   ▀";
-        echo "█ ▄   █ ██ █▀▀    ██    █▀▀▀  ██ ██   █ ██▄▄    █▄▄█ █▀▀▀  █▀▀▀  █     ██▄▄  ";
-        echo "█  █  █ ▐█ █      ▐█    █     ▐█ █ █  █ █▄   ▄▀ █  █ █     █     ███▄  █▄   ▄";
-        echo " █ █ █   ▐  █      ▐     █     ▐ █  █ █ ▀███▀      █  █     █        ▀ ▀███▀ ";
-        echo "  ▀ ▀        ▀            ▀      █   ██           █    ▀     ▀         $(tput sgr0)v$wpver";
-        ;;
-        5)
-        echo $(tput setaf 3)
-        echo "               (          (                                                 ";
-        echo " (  (          )\ )       )\ )                                     (        ";
-        echo " )\))(   ' (  (()/(  (   (()/( (            (     )                )\   (   ";
-        echo "((_)()\ )  )\  /(_)) )\   /(_)))\   (      ))\ ( /(  \`  )   \`  )  ((_) ))\ ";
-        echo "_(())\_)()((_)(_))_|((_) (_)) ((_)  )\ )  /((_))(_)) /(/(   /(/(   _  /((_) ";
-        echo "\ \((_)/ / (_)| |_   (_) | _ \ (_) _(_/( (_)) ((_)_ ((_)_\ ((_)_\ | |(_))   ";
-        echo " \ \/\/ /  | || __|  | | |  _/ | || ' \))/ -_)/ _\` || '_ \)| '_ \)| |/ -_)  ";
-        echo "  \_/\_/   |_||_|    |_| |_|   |_||_||_| \___|\__,_|| .__/ | .__/ |_|\___|  ";
-        echo "                                                    |_|    |_|       $(tput sgr0)v$wpver";
-        ;;
-    esac
-}
 
 function showsettings {
     printf "\n\
@@ -200,7 +150,7 @@ function guidedsetup {
         fi
     done
     printf "[Checking]"
-    sleep 5
+    sleep 5 # Wait as the system is likely to rename interface. Sleeping rather than more advanced error handling becasue reasons. Try: dmesg | tail | grep -E 'asix.*renamed'
     pineappleiface=$(ip addr | grep '00:[cC]0:[cC][aA]\|00:13:37' -B1 | awk {'print $2'} | head -1 | grep 'eth\|en' | sed 's/://g')
     printf "\n    Detected WiFi Pineapple on interface $(tput bold)$pineappleiface$(tput sgr0)\n";
     read -r -p "    Use the above detected WiFi Pineapple interface?    [Y/n]? " pi
@@ -234,19 +184,19 @@ function advancedsetup {
         [yY][eE][sS]|[yY])
             read -r -p "    WiFi Pineapple Network           [172.16.42.0/24]: " spineapplenet
             if [[ $spineapplenet == '' ]]; then
-            spineapplenet=172.16.42.0/24
+            spineapplenet=172.16.42.0/24 # Pineapple network. Default is 172.16.42.0/24
             fi
             read -r -p "    WiFi Pineapple Netmask           [255.255.255.0]: " spineapplenmask
             if [[ $spineapplenmask == '' ]]; then
-            spineapplenmask=255.255.255.0
+            spineapplenmask=255.255.255.0 #Default netmask for /24 network
             fi
             read -r -p "    Host IP Address                  [172.16.42.42]: " spineapplehostip
             if [[ $spineapplehostip == '' ]]; then
-            spineapplehostip=172.16.42.42
+            spineapplehostip=172.16.42.42 #IP Address of host computer
             fi
             read -r -p "    WiFi Pineapple IP Address        [172.16.42.1]: " spineappleip
             if [[ $spineappleip == '' ]]; then
-            spineappleip=172.16.42.1
+            spineappleip=172.16.42.1 #Don't forget your towel
             fi
             printf "\n    Advanced IP settings will be saved for future sessions.\n    Default settings may be restored by selecting Advanced IP settings and\n    pressing [ENTER] when prompted for IP settings.\n\n    Press any key to continue"
             savechanges
@@ -288,14 +238,14 @@ function connectsaved {
     printf "    $(tput setaf 6) (_  _(_ ,)$(tput sgr0)       $(tput setaf 7)\___\\$(tput sgr0)        $(tput setaf 3)'<><>'$(tput sgr0)\n"
     ip addr add $spineapplehostip/$spineapplenmask dev $spineapplelan
     ip link set $spineapplelan up
-    echo '1' > /proc/sys/net/ipv4/ip_forward
-    iptables -X
+    echo '1' > /proc/sys/net/ipv4/ip_forward # Enable IP Forwarding
+    iptables -X #clear chains and rules
     iptables -F
-    iptables -A FORWARD -i $spineapplewan -o $spineapplelan -s $spineapplenet -m state --state NEW -j ACCEPT
+    iptables -A FORWARD -i $spineapplewan -o $spineapplelan -s $spineapplenet -m state --state NEW -j ACCEPT #setup IP forwarding
     iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
     iptables -A POSTROUTING -t nat -j MASQUERADE
-    ip route del default
-    ip route add default via $spineapplegw dev $spineapplewan
+    ip route del default #remove default route
+    ip route add default via $spineapplegw dev $spineapplewan #add default gateway
     printf "\n    Browse to http://$spineappleip:1471\n\n"
     exit
 }
@@ -307,7 +257,6 @@ function bunny {
     exit
 }
 
-#banner
 showsettings
 if [[ "$sfirsttime" == "1" ]]; then
     printf "
