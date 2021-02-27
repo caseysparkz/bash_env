@@ -6,12 +6,12 @@
 wpver=7.0
 spineapplenmask=255.255.255.0
 spineapplenet=172.16.42.0/24
-spineapplelan=eth1
-spineapplewan=wlan0
-spineapplegw=192.168.1.1
+spineapplelan=enp0s20f0u2
+spineapplewan=wlp2s0
+spineapplegw=192.168.1.99
 spineapplehostip=172.16.42.42
 spineappleip=172.16.42.1
-sfirsttime=1
+sfirsttime=0
 
 mach="$(uname -s)"
 case "${mach}" in
