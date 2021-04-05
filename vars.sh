@@ -7,6 +7,6 @@ export FUNCTIONS="${HOME}/.env/functions"
 export SCRIPTS="${HOME}/.env/scripts"
 export GSH="${HOME}/.env/gsh"
 
-# GPG variables for SSH.
+## GPG variables for SSH.
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

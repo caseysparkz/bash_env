@@ -15,7 +15,8 @@ alias chr="chmod 644"
 alias chx="chmod 755"
 
 ### exit
-alias q="exit"
+alias exit="history -c && exit"
+alias q="history -c && exit"
 
 ### Facter as YAML
 alias facter="facter -y"
@@ -38,7 +39,7 @@ alias hgrep="history|grep -E"
 alias ipe="curl ipinfo.io/ip && printf '\n'"
 
 ### Metasploit
-alias msf="msfconsole --quiet"
+alias msf="msfconsole --quiet -x \"db_connect 'user'@'msf'\""
 
 ### MySQL
 alias mysql="mysql -u $(whoami) -p"
