@@ -1,5 +1,5 @@
 ###transnat
 # ~/.screenrc
 defshell -bash
-defscrollback 100000
+defscrollback 300000
 fileformat=unix
