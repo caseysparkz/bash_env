@@ -1,0 +1,6 @@
+git \
+nmap \
+python3 \
+thefuck	\
+tldr \
+vim

@@ -1,34 +1,48 @@
-!/bin/bash
+#!/bin/env bash
 ### Installer for preferred packages.
 
-### Install packages for installed distro or exit if distro not supported.
-if [ -f /etc/debian_version ]; then
-  sudo sh -c "
-    apt update &&
-    apt upgrade -y &&
-    apt install -y $(cat ${HOME}/.env/packages/apt.txt)
-  "
+### Variable declarations.
+PACKAGEFILE=${HOME}/.env/packages/distro-packages.txt
+SNAPFILE=${HOME}/.env/packages/snap-packages.txt
+PIPFILE=${HOME}/.env/packages/pip-packages.txt
 
-elif [ -f /etc/redhat-release ]; then
-  sudo sh -c "
-    dnf update &&
-    dnf upgrade -y &&
-    dnf install -y $(cat ${HOME}/.env/packages/dnf.txt)
-  "
+### Install packages for distro or exit if distro not supported.
+if [ -f ${PACKAGEFILE} ]; then
+	if [ -f /etc/debian_version ]; then
+			sudo sh -c "
+			apt update &&
+			apt upgrade -y &&
+			apt install -y $(cat ${PACKAGEFILE})
+		"
 
-elif [ -f /etc/arch-release ]; then
-  sudo pacman -Syu --noconfirm $(cat ${HOME}/.env/packages/arch.txt)
+	elif [ -f /etc/redhat-release ]; then
+		sudo sh -c "
+			dnf update &&
+			dnf upgrade -y &&
+			dnf install -y $(cat ${PACKAGEFILE})
+		"
 
-else
-  echo "Unknown distro";
-  exit
+	elif [ -f /etc/arch-release ]; then
+		sudo pacman -Syu --noconfirm $(cat ${PACKAGEFILE})
+
+	else
+		echo "Unknown distro";
+		exit
+	fi
 fi
 
 ### Symlink snap.
-if [ ! -L /snap ] && [ -d /var/lib/snapd/snap ]; then
+if [ ! -L /snap ] && [ -d /var/lib/snapd/snap ] && [ -x $(which snap) ]; then
   sudo ln -s /var/lib/snapd/snap /snap
+
+	### Install snap packages.
+	if [ -f ${SNAPFILE} ]; then
+		snap install $(cat ${SNAPFILE})
+	fi
 fi
 
 
 ### Install pip3 packages.
-sudo pip3 install $(cat ${HOME}/.env/packages/pip3.txt)
+if [ -f $(which pip) ] && [ -f ${PIPFILE} ]; then
+	sudo pip3 install $(cat ${PIPFILE})
+fi
