@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/env bash
 
 ### Change ownership to user and hide directory.
 chown -R $(whoami) ${HOME}/env

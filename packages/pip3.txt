@@ -1,3 +1,0 @@
-pywal \
-thefuck \
-tldr
