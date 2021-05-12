@@ -1,5 +1,7 @@
-###transnat
 # ~/.screenrc
+hardstatus alwayslistline
+
 defshell -bash
 defscrollback 300000
+defslowpaste 1
 fileformat=unix
