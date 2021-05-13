@@ -60,7 +60,3 @@ alias src="source ${HOME}/.profile && source ${HOME}/.bashrc"
 
 ### Speed test
 alias speed="speedtest-cli"
-
-### Sudo
-alias sudo="sudo -E"
-alias please="sudo"

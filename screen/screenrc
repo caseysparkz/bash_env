@@ -2,4 +2,5 @@
 # ~/.screenrc
 defshell -bash
 defscrollback 300000
+defslowpaste 0
 fileformat=unix
