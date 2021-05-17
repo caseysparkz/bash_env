@@ -1,11 +1,7 @@
 # ~/.screenrc
 hardstatus alwayslistline
-
 defshell -bash
 defscrollback 300000
-<<<<<<< HEAD
 defslowpaste 0
-=======
 defslowpaste 1
->>>>>>> f168494 (Changed some GNU screen preferences.)
 fileformat=unix
