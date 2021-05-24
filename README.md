@@ -19,7 +19,7 @@ This repository and its installation scripts add three directories to ${PATH}:
 The scripts and functions directories are largely self-explanitory; the gsh directory contains PGP-encrypted scripts which are decrypted and interpreted by a bash subshell. These scripts will not be usable without the public key used to encrypt them, but you can create your own gsh scripts with the 'gshmake' script located in env/scripts.
 
 ## File Structure
-As previously noted, running env/install.sh will replace the user's	~/.{profile,bashrc,vimrc,screenrc} scripts. env/bashrc also loads env/aliases and env/vars.sh, which set user aliases and environment variables, respectively.
+As previously noted, running install.sh will replace the user's	~/.{profile,bashrc,vimrc,screenrc} scripts. ~/.env/bashrc also loads ~/env/aliases, ~/.env/vars.sh, and ~/.env/functions/\*, which set user aliases, environment variables, and functions respectively.
 
 ## To Do:
 * Make packages.sh interpretable by `apt`, `yum`, and `pacman` package managers.
