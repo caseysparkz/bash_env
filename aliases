@@ -28,6 +28,12 @@ alias darn="fuck"
 alias gca="gpg-connect-agent updatestartuptty /bye"
 #alias gpg="gpg2"
 
+### grep
+alias grip="grep -i"
+alias grEp="grep -E"
+alias greP="grep -P"
+alias griP="grep -iP"
+
 ### Hak5
 alias wp7="sudo wp7"
 
