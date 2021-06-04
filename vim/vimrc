@@ -17,5 +17,6 @@ set softtabstop=2     " Sets the number of columns for a TAB.
 set noexpandtab       " Expand TABs to spaces.
 set number            " Put line numbers.
 set spelllang=en_us   " Set spellcheck language.
+set textwidth=80			" Set maximum line length.
 
 let g:tex_flavor='latex'

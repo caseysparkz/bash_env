@@ -30,9 +30,10 @@ alias gca="gpg-connect-agent updatestartuptty /bye"
 
 ### grep
 alias grip="grep -i"
-alias grEp="grep -E"
-alias greP="grep -P"
 alias griP="grep -iP"
+alias greP="grep -P"
+alias grEp="grep -E"
+alias grvp="grep -v"
 
 ### Hak5
 alias wp7="sudo wp7"
