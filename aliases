@@ -7,8 +7,8 @@ alias lgrep='ls|grep'
 
 ### Clear
 alias c="clear"
-alias cl="c;ll"
-alias cla="c;la"
+alias cl="c;ls -lFh"
+alias cla="c;ls -lFha"
 
 ### chmod
 alias chr="chmod 644"
@@ -26,7 +26,6 @@ alias darn="fuck"
 
 ### GPG
 alias gca="gpg-connect-agent updatestartuptty /bye"
-#alias gpg="gpg2"
 
 ### grep
 alias grip="grep -i"
