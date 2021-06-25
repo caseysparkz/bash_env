@@ -1,0 +1,15 @@
+[user]
+	email = github@caseyspar.kz
+	name = Casey Sparks
+	signingKey = 0x3260255327CBCDA1
+[ssh]
+	postBuffer = 1000000000
+[init]
+	defaultBranch = main
+[http]
+	postBuffer = 1048576000
+	postBuffer = 1048576000
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true
