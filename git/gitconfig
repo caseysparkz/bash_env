@@ -1,6 +1,6 @@
 [user]
 	email = github@caseyspar.kz
-	name = Casey Sparks
+	name = caseysparkz
 	signingKey = 0x3260255327CBCDA1
 [ssh]
 	postBuffer = 1000000000
