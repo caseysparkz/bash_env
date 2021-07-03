@@ -22,7 +22,7 @@ alias q="history -c && exit"
 alias facter="facter -y"
 
 ### Fuck
-alias darn="fuck"
+alias F="fuck"
 
 ### GPG
 alias gca="gpg-connect-agent updatestartuptty /bye"

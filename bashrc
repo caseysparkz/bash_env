@@ -40,7 +40,7 @@ esac
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    if [ -x $(which tput) ] && tput setaf 1 >&/dev/null; then
         # We have color support; assume it's compliant with Ecma-48
         # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
         # a case would tend to support setf rather than setaf.)
@@ -67,7 +67,7 @@ xterm*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [ -x $(which dircolors) ]; then
     test -r ${HOME}/.dircolors && eval "$(dircolors -b ${HOME}/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
@@ -86,7 +86,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 if [ -f ${HOME}/.env/aliases ]; then
-    . ${HOME}/.env/aliases
+    source ${HOME}/.env/aliases
 fi
 
 # Function definitions
@@ -101,9 +101,9 @@ fi
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+    source /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    source /etc/bash_completion
   fi
 fi
 
@@ -117,11 +117,11 @@ if [ -f ${HOME}/.env/vars.sh ] && [ -x /usr/bin/gpgconf ]; then
   gpgconf --launch gpg-agent
 fi
 
-if [ -x /usr/bin/thefuck ]; then
+if [ -x $(which thefuck) ]; then
   eval $(thefuck --alias)
 fi
 
-if [ -x /usr/bin/wal ]; then
+if [ -x $(which wal) ]; then
   wal -i $(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99) -q -b 000000
 fi
 
