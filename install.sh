@@ -18,7 +18,7 @@ ln -s ${HOME}/.env/screen/screenrc ${HOME}/.screenrc
 
 ### Remove vim settings and symlink to new settings.
 rm -rf ${HOME}/.vim
-ln -s ${HOME}/.env/vim ${HOME}/.vim
+ln -s ${HOME}/.env/configs/vim ${HOME}/.vim
 
 rm ${HOME}/.vimrc
 ln -s ${HOME}/.env/vim/vimrc ${HOME}/.vimrc

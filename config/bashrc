@@ -85,8 +85,8 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '$
 
 # Alias definitions.
-if [ -f ${HOME}/.env/aliases ]; then
-    source ${HOME}/.env/aliases
+if [ -f ${HOME}/.env/config/aliases ]; then
+    source ${HOME}/.env/config/aliases
 fi
 
 # Function definitions
