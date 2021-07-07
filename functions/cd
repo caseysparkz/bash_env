@@ -1,17 +1,12 @@
-### cdc: Change directory and clear terminal
-### cdl: Change directory, clear terminal, and display directory contents as list 
-
+# Change directory and clear terminal
 cdc() {
-
-  cd $1;
+  cd $1
   clear
-
 }
 
+# Change directory, clear terminal, and display directory contents as list 
 cdl() {
-
-  cd $1;
-  clear;
-  ls -la
-
+  cd $1
+  clear
+  ls -l
 }

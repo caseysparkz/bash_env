@@ -5,7 +5,7 @@ alias l='ls -CF'
 alias df='df -h'
 alias lgrep='ls|grep'
 
-### Clear
+### clear
 alias c="clear"
 alias cl="c;ls -lFh"
 alias cla="c;ls -lFha"
