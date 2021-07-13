@@ -2,7 +2,7 @@
 xrandr \
   --auto
 
-sleep 1
+sleep 2
 
 xrandr \
   --output eDP1 --primary --mode 1920x1200 --pos 0x144 --rotate normal \
